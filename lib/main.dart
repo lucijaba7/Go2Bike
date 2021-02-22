@@ -1,4 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:go2bike/Screens/Welcome/welcome_screen.dart';
+import 'package:go2bike/constraints.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Go2Bike',
+      theme: ThemeData(
+        primaryColor: kPrimaryColor,
+        scaffoldBackgroundColor: kPrimaryLightColor,
+      ),
+      home: WelcomeScreen(),
+    );
+  }
+}
+
+/*
+SVE ONO OD PRIJE dosta helpful pa necu obrisat
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
@@ -114,4 +137,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-}
+}*/
