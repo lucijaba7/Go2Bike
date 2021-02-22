@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-//Trenutno nebitno.. ako cemo imat neke u kutovima kao krugove onda ima smisla
-
 class Background extends StatelessWidget {
   final Widget child;
   const Background({

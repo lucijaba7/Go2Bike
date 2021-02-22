@@ -10,7 +10,21 @@ class Body extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          SvgPicture.asset("assets\icons\Logo.svg"),
+          Positioned(
+            top: 0,
+            left: 0,
+            child: Image.asset(
+              "assets/images/Logo.png",
+            ),
+          ),
+          /*SvgPicture.asset(
+            "assets/images/Logo.svg",
+          ),*/
+          FlatButton(
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+            onPressed: () {},
+            child: Text("Login"),
+          ),
         ],
       ),
     );
