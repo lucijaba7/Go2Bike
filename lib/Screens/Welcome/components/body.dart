@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go2bike/Screens/Signup/signup_screen.dart';
+import 'package:go2bike/Screens/Login/login_screen.dart';
 import 'package:go2bike/Screens/Welcome/components/background.dart';
 import 'package:go2bike/components/rounded_button.dart';
 import 'package:go2bike/constraints.dart';
@@ -27,7 +28,16 @@ class Body extends StatelessWidget {
             SizedBox(height: size.height * 0.04),
             RoundedButton(
               text: "Prijava",
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return LoginScreen();
+                    },
+                  ),
+                );
+              },
             ),
             RoundedButton(
               text: "Registracija",
