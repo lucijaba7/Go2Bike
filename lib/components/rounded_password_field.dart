@@ -25,6 +25,10 @@ class RoundedPasswordField extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.w700,
           ),
+          /*suffixIcon: Icon(
+            Icons.visibility,
+            color: kPrimaryDarkColor,
+          ),*/
         ),
       ),
       TextFieldContainer(

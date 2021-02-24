@@ -4,6 +4,7 @@ import 'package:go2bike/components/already_have_an_account_check.dart';
 import 'package:go2bike/components/rounded_button.dart';
 import 'package:go2bike/components/rounded_input_field.dart';
 import 'package:go2bike/components/rounded_password_field.dart';
+
 //import 'package:go2bike/components/text_field_container.dart';
 //import 'package:go2bike/constraints.dart';
 //import 'package:go2bike/constraints.dart';
@@ -47,6 +48,37 @@ class LoginScreen extends StatelessWidget {
             RoundedButton(
               text: "Prijava",
               press: () {},
+            ),
+            SizedBox(height: size.height * 0.02),
+            Text(
+              "Prijavite se putem",
+            ),
+            SizedBox(height: size.height * 0.02),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                RawMaterialButton(
+                  onPressed: () {},
+                  elevation: 2.0,
+                  fillColor: Colors.white,
+                  child: Image.asset(
+                    "assets/images/facebook.png",
+                    height: 60.0,
+                  ),
+                  shape: CircleBorder(),
+                ),
+                RawMaterialButton(
+                  onPressed: () {},
+                  elevation: 2.0,
+                  fillColor: Colors.white,
+                  child: Image.asset(
+                    "assets/images/google.png",
+                    height: 40.0,
+                  ),
+                  padding: EdgeInsets.all(10.0),
+                  shape: CircleBorder(),
+                )
+              ],
             ),
             SizedBox(height: size.height * 0.02),
             AlreadyHaveAnAccountCheck(
