@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go2bike/Screens/Signup/signup_screen.dart';
 import 'package:go2bike/components/already_have_an_account_check.dart';
 import 'package:go2bike/components/rounded_button.dart';
 import 'package:go2bike/components/rounded_input_field.dart';
@@ -32,18 +33,34 @@ class LoginScreen extends StatelessWidget {
             Text(
               "Nova generacija Smart Bike Sharinga",
             ),
+            SizedBox(height: size.height * 0.05),
             RoundedInputField(
+              label: "KORISNIČKO IME",
               hintText: "Upišite svoje korisničko ime",
               onChanged: (value) {},
             ),
             RoundedPasswordField(
+              label: "LOZINKA",
+              hintText: "Upišite svoju lozinku",
               onChanged: (value) {},
             ),
             RoundedButton(
               text: "Prijava",
               press: () {},
             ),
-            AlreadyHaveAnAccountCheck(press: () {})
+            SizedBox(height: size.height * 0.02),
+            AlreadyHaveAnAccountCheck(
+              press: () {
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return SignUpScreen();
+                      },
+                    ),
+                  );
+                },
+            )
           ],
         ),
       ),
