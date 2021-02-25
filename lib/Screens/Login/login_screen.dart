@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/Provider/locale_provider.dart';
 import 'package:go2bike/Screens/Signup/signup_screen.dart';
 import 'package:go2bike/components/already_have_an_account_check.dart';
 import 'package:go2bike/components/forgot_password.dart';
@@ -8,8 +7,6 @@ import 'package:go2bike/components/rounded_button.dart';
 import 'package:go2bike/components/rounded_input_field.dart';
 import 'package:go2bike/components/rounded_password_field.dart';
 import 'package:go2bike/constraints.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:provider/provider.dart';
 
 //import 'package:go2bike/components/text_field_container.dart';
 //import 'package:go2bike/constraints.dart';
@@ -19,7 +16,6 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    ////////////////////////final provider = Provider.of<LocaleProvider>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -53,7 +49,7 @@ class LoginScreen extends StatelessWidget {
                 onChanged: (value) {},
               ),
               RoundedPasswordField(
-                label: AppLocalizations.of(context).signin,
+                //label: AppLocalizations.of(context).signin,
                 //"LOZINKA",
                 hintText: "Upišite svoju lozinku",
                 onChanged: (value) {},

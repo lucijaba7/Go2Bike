@@ -1,17 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:go2bike/components/language_button.dart';
 import 'package:go2bike/constraints.dart';
-import 'package:go2bike/l10n/l10n.dart';
-import 'package:go2bike/provider/locale_provider.dart';
-import 'package:provider/provider.dart';
+import 'package:go2bike/main.dart';
 
-class LanguageFooter extends StatelessWidget {
+class LanguageFooter extends StatefulWidget {
   final Widget child;
 
   const LanguageFooter({
     Key key,
     this.child,
   }) : super(key: key);
+
+  @override
+  _LanguageFooterState createState() => _LanguageFooterState();
+}
+
+class _LanguageFooterState extends State<LanguageFooter> {
+  _changeLanguage(String language) async {
+    Locale _temp;
+    switch (language) {
+      case 'en':
+        _temp = Locale(language, 'UK');
+        break;
+      case 'hr':
+        _temp = Locale(language, 'HR');
+        break;
+    }
+
+    MyApp.setLocale(context, _temp);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +39,7 @@ class LanguageFooter extends StatelessWidget {
             //LanguageButton(),
             RawMaterialButton(
               onPressed: () {
-                final provider =
-                    Provider.of<LocaleProvider>(context, listen: false)
-                        .setLocale(Locale('en'));
+                _changeLanguage('en');
               },
               elevation: 2.0,
               fillColor: Colors.white,
@@ -36,9 +51,7 @@ class LanguageFooter extends StatelessWidget {
             ),
             RawMaterialButton(
               onPressed: () {
-                final provider =
-                    Provider.of<LocaleProvider>(context, listen: false)
-                        .setLocale(Locale('hr'));
+                _changeLanguage('hr');
               },
               elevation: 2.0,
               fillColor: Colors.white,
