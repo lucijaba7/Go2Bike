@@ -6,11 +6,15 @@ class RoundedPasswordField extends StatelessWidget {
   final String label;
   final String hintText;
   final ValueChanged<String> onChanged;
+  final ValueChanged<String> onSaved;
+  final TextEditingController controller;
   const RoundedPasswordField({
     Key key,
     this.label,
     this.hintText,
     this.onChanged,
+    this.onSaved,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -32,7 +36,7 @@ class RoundedPasswordField extends StatelessWidget {
         ),
       ),
       TextFieldContainer(
-        child: TextField(
+        child: TextFormField(
           obscureText: true,
           onChanged: onChanged,
           decoration: InputDecoration(
@@ -41,10 +45,10 @@ class RoundedPasswordField extends StatelessWidget {
               Icons.lock,
               color: kPrimaryDarkColor,
             ),
-            suffixIcon: Icon(
+           /* suffixIcon: Icon(
               Icons.visibility,
               color: kPrimaryDarkColor,
-            ),
+            ),*/
             border: InputBorder.none,
           ),
         ),
