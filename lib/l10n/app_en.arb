@@ -1,0 +1,14 @@
+{
+    "language":"English",
+    "@language":{
+        "description": "The current language"
+    },
+    "signin":"Sign in",
+    "@signin":{
+        "description": "Sign In"
+    },
+    "register":"Register",
+    "@register":{
+        "description": "Register"
+    }
+}

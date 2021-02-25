@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:go2bike/Provider/locale_provider.dart';
 import 'package:go2bike/Screens/Signup/signup_screen.dart';
 import 'package:go2bike/Screens/Login/login_screen.dart';
 import 'package:go2bike/Screens/Welcome/components/background.dart';
+import 'package:go2bike/components/language_footer.dart';
 import 'package:go2bike/components/rounded_button.dart';
 import 'package:go2bike/constraints.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<LocaleProvider>(context);
     Size size = MediaQuery.of(context).size;
     return Container(
       height: size.height,
       width: double.infinity,
+      alignment: Alignment.center,
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +35,7 @@ class Body extends StatelessWidget {
             ),*/
             SizedBox(height: size.height * 0.04),
             RoundedButton(
-              text: "Prijava",
+              text: AppLocalizations.of(context).signin,
               press: () {
                 Navigator.push(
                   context,
@@ -42,7 +48,7 @@ class Body extends StatelessWidget {
               },
             ),
             RoundedButton(
-              text: "Registracija",
+              text: AppLocalizations.of(context).register,
               color: Colors.white,
               textColor: kPrimaryDarkColor,
               press: () {
@@ -56,6 +62,7 @@ class Body extends StatelessWidget {
                 );
               },
             ),
+            LanguageFooter(),
           ],
         ),
       ),

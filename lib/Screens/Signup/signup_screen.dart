@@ -7,7 +7,7 @@ import 'package:go2bike/components/rounded_input_field.dart';
 import 'package:go2bike/components/rounded_password_field.dart';
 
 class SignUpScreen extends StatelessWidget {
-   @override
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -28,10 +28,14 @@ class SignUpScreen extends StatelessWidget {
                 "Registriraj se na Go2Bike",
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
+                  fontSize: 18,
                 ),
               ),
               Text(
                 "Izradi svoj korisnički račun",
+                style: TextStyle(
+                  fontSize: 16,
+                ),
               ),
               SizedBox(height: size.height * 0.05),
               RoundedInputField(
@@ -65,7 +69,7 @@ class SignUpScreen extends StatelessWidget {
                 login: false,
                 press: () {
                   Navigator.push(
-                    context, 
+                    context,
                     MaterialPageRoute(
                       builder: (context) {
                         return LoginScreen();

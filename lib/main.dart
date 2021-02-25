@@ -1,30 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:go2bike/Screens/Welcome/welcome_screen.dart';
 import 'package:go2bike/constraints.dart';
-//import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:go2bike/l10n/l10n.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:go2bike/Provider/locale_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Go2Bike',
-      theme: ThemeData(
-        //primaryColor: kPrimaryColor,
-        scaffoldBackgroundColor: kPrimaryLightColor,
-        fontFamily: 'JosefinSans',
-        textTheme: TextTheme(
-          bodyText2: TextStyle(
-            //nez zas je bodytext2, mozda moze bodytext1
-            color: kPrimaryDarkColor,
+  Widget build(BuildContext context) => ChangeNotifierProvider(
+      create: (context) => LocaleProvider(),
+      builder: (context, child) {
+        final provider = Provider.of<LocaleProvider>(context);
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Go2Bike',
+          theme: ThemeData(
+            //primaryColor: kPrimaryColor,
+            scaffoldBackgroundColor: kPrimaryLightColor,
+            fontFamily: 'JosefinSans',
+            textTheme: TextTheme(
+              bodyText2: TextStyle(
+                color: kPrimaryDarkColor,
+              ),
+            ),
           ),
-        ),
-      ),
-      home: WelcomeScreen(),
-    );
-  }
+          locale: provider.locale,
+          supportedLocales: L10n.all,
+          localizationsDelegates: [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          home: WelcomeScreen(),
+        );
+      });
 }
 
 /*
