@@ -6,6 +6,7 @@ import 'package:go2bike/components/language_footer.dart';
 import 'package:go2bike/components/rounded_button.dart';
 import 'package:go2bike/constraints.dart';
 import 'package:go2bike/main.dart';
+import 'package:go2bike/localization/demo_localization.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -32,7 +33,7 @@ class Body extends StatelessWidget {
             ),*/
             SizedBox(height: size.height * 0.04),
             RoundedButton(
-              text: 'hh', //getTranslated(context, 'signin'),
+              text: DemoLocalization.of(context).getTranslatedValue('signin'),
               press: () {
                 Navigator.push(
                   context,
@@ -45,7 +46,8 @@ class Body extends StatelessWidget {
               },
             ),
             RoundedButton(
-              text: 'lala', //getTranslated(context, 'register'),
+              text: DemoLocalization.of(context).getTranslatedValue(
+                  'register'), //getTranslated(context, 'register'),
               color: Colors.white,
               textColor: kPrimaryDarkColor,
               press: () {

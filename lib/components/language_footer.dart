@@ -32,49 +32,53 @@ class _LanguageFooterState extends State<LanguageFooter> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Row(
-          children: <Widget>[
-            //LanguageButton(),
-            RawMaterialButton(
-              onPressed: () {
-                _changeLanguage('en');
-              },
-              elevation: 2.0,
-              fillColor: Colors.white,
-              constraints: BoxConstraints.tight(Size(20, 20)),
-              child: Image.asset(
-                "assets/images/united-kingdom.png",
+    return Align(
+      alignment: Alignment.center,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              //LanguageButton(),
+              RawMaterialButton(
+                onPressed: () {
+                  _changeLanguage('en');
+                },
+                elevation: 2.0,
+                fillColor: Colors.white,
+                constraints: BoxConstraints.tight(Size(20, 20)),
+                child: Image.asset(
+                  "assets/images/united-kingdom.png",
+                ),
+                shape: CircleBorder(),
               ),
-              shape: CircleBorder(),
-            ),
-            RawMaterialButton(
-              onPressed: () {
-                _changeLanguage('hr');
-              },
-              elevation: 2.0,
-              fillColor: Colors.white,
-              constraints: BoxConstraints.tight(Size(20, 20)),
-              child: Image.asset(
-                "assets/images/croatia.png",
+              RawMaterialButton(
+                onPressed: () {
+                  _changeLanguage('hr');
+                },
+                elevation: 2.0,
+                fillColor: Colors.white,
+                constraints: BoxConstraints.tight(Size(20, 20)),
+                child: Image.asset(
+                  "assets/images/croatia.png",
+                ),
+                shape: CircleBorder(),
               ),
-              shape: CircleBorder(),
-            ),
-          ],
-        ),
-        Row(
-          children: <Widget>[
-            Text("UTE d.o.o "),
-            Icon(
-              Icons.copyright,
-              color: kPrimaryDarkColor,
-              size: 14,
-            ),
-            Text("2020."),
-          ],
-        ),
-      ],
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              Text("UTE d.o.o "),
+              Icon(
+                Icons.copyright,
+                color: kPrimaryDarkColor,
+                size: 14,
+              ),
+              Text("2020."),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

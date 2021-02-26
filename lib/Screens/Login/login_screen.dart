@@ -6,13 +6,13 @@ import 'package:go2bike/components/language_footer.dart';
 import 'package:go2bike/components/rounded_button.dart';
 import 'package:go2bike/components/rounded_input_field.dart';
 import 'package:go2bike/components/rounded_password_field.dart';
-import 'package:go2bike/constraints.dart';
 
-//import 'package:go2bike/components/text_field_container.dart';
-//import 'package:go2bike/constraints.dart';
-//import 'package:go2bike/constraints.dart';
+class LoginScreen extends StatefulWidget {
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
 
-class LoginScreen extends StatelessWidget {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -49,8 +49,7 @@ class LoginScreen extends StatelessWidget {
                 onChanged: (value) {},
               ),
               RoundedPasswordField(
-                //label: AppLocalizations.of(context).signin,
-                //"LOZINKA",
+                label: "LOZINKA",
                 hintText: "Upišite svoju lozinku",
                 onChanged: (value) {},
               ),
