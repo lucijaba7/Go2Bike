@@ -33,10 +33,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 "Registriraj se na Go2Bike",
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
+                  fontSize: 18,
                 ),
               ),
               Text(
                 "Izradi svoj korisnički račun",
+                style: TextStyle(
+                  fontSize: 16,
+                ),
               ),
               SizedBox(height: size.height * 0.05),
               RoundedInputField(
@@ -70,7 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 login: false,
                 press: () {
                   Navigator.push(
-                    context, 
+                    context,
                     MaterialPageRoute(
                       builder: (context) {
                         return LoginScreen();

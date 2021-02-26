@@ -9,13 +9,13 @@ class DropdownButtonWidget extends StatefulWidget {
   _DropdownButtonWidgetState createState() => _DropdownButtonWidgetState();
 }
 
-class _DropdownButtonWidgetState extends State<DropdownButtonWidget>  {
+class _DropdownButtonWidgetState extends State<DropdownButtonWidget> {
   String dropdownValue = 'Pula';
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container (
+    return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
       width: size.width * 0.8,
@@ -31,12 +31,12 @@ class _DropdownButtonWidgetState extends State<DropdownButtonWidget>  {
               offset: Offset(0.0, 0.75), // changes position of shadow
             ),
           ]),
-        child: Padding(
-         padding: const EdgeInsets.only(left: 8.0),
-          child: ClipRRect(
+      child: Padding(
+        padding: const EdgeInsets.only(left: 8.0),
+        child: ClipRRect(
             borderRadius: BorderRadius.circular(29),
-          child: DropdownButtonHideUnderline(
-            child: DropdownButton<String>(
+            child: DropdownButtonHideUnderline(
+                child: DropdownButton<String>(
               value: dropdownValue,
               icon: Icon(Icons.arrow_right),
               iconSize: 24,
@@ -50,11 +50,14 @@ class _DropdownButtonWidgetState extends State<DropdownButtonWidget>  {
                   .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
-                  child: Text(value),
+                  child: Text(
+                    value,
+                    style: TextStyle(color: kPrimaryDarkColor),
+                  ),
                 );
               }).toList(),
-          ))),
-        ),
-      );
+            ))),
+      ),
+    );
   }
 }

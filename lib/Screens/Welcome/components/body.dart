@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go2bike/Screens/Signup/signup_screen.dart';
 import 'package:go2bike/Screens/Login/login_screen.dart';
 import 'package:go2bike/Screens/Welcome/components/background.dart';
+import 'package:go2bike/components/language_footer.dart';
 import 'package:go2bike/components/rounded_button.dart';
 import 'package:go2bike/constraints.dart';
+import 'package:go2bike/main.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -12,6 +14,7 @@ class Body extends StatelessWidget {
     return Container(
       height: size.height,
       width: double.infinity,
+      alignment: Alignment.center,
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +32,7 @@ class Body extends StatelessWidget {
             ),*/
             SizedBox(height: size.height * 0.04),
             RoundedButton(
-              text: "Prijava",
+              text: 'hh', //getTranslated(context, 'signin'),
               press: () {
                 Navigator.push(
                   context,
@@ -42,7 +45,7 @@ class Body extends StatelessWidget {
               },
             ),
             RoundedButton(
-              text: "Registracija",
+              text: 'lala', //getTranslated(context, 'register'),
               color: Colors.white,
               textColor: kPrimaryDarkColor,
               press: () {
@@ -56,6 +59,7 @@ class Body extends StatelessWidget {
                 );
               },
             ),
+            LanguageFooter(),
           ],
         ),
       ),
