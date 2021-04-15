@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go2bike/Screens/Welcome/welcome_screen.dart';
 import 'package:go2bike/constraints.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:go2bike/localization/demo_localization.dart';
+import 'package:go2bike/localization/app_localization.dart';
 
 void main() => runApp(MyApp());
 
@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
         Locale('hr', 'HR'),
       ],
       localizationsDelegates: [
-        DemoLocalization.delegate,
+        AppLocalization.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

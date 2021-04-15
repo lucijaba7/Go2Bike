@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/components/language_button.dart';
 import 'package:go2bike/constraints.dart';
 import 'package:go2bike/main.dart';
 
@@ -32,10 +31,10 @@ class _LanguageFooterState extends State<LanguageFooter> {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.center,
+    return Container(
+      width: double.infinity,
+      alignment: Alignment.bottomCenter,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Row(
             children: <Widget>[

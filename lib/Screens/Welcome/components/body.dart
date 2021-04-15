@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go2bike/Screens/Signup/signup_screen.dart';
 import 'package:go2bike/Screens/Login/login_screen.dart';
-import 'package:go2bike/Screens/Welcome/components/background.dart';
 import 'package:go2bike/components/language_footer.dart';
 import 'package:go2bike/components/rounded_button.dart';
 import 'package:go2bike/constraints.dart';
-import 'package:go2bike/main.dart';
-import 'package:go2bike/localization/demo_localization.dart';
+import 'package:go2bike/localization/app_localization.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -33,7 +31,7 @@ class Body extends StatelessWidget {
             ),*/
             SizedBox(height: size.height * 0.04),
             RoundedButton(
-              text: DemoLocalization.of(context).getTranslatedValue('signin'),
+              text: AppLocalization.of(context).translate('signin'),
               press: () {
                 Navigator.push(
                   context,
@@ -46,8 +44,8 @@ class Body extends StatelessWidget {
               },
             ),
             RoundedButton(
-              text: DemoLocalization.of(context).getTranslatedValue(
-                  'register'), //getTranslated(context, 'register'),
+              text: AppLocalization.of(context)
+                  .translate('register'), //getTranslated(context, 'register'),
               color: Colors.white,
               textColor: kPrimaryDarkColor,
               press: () {
