@@ -1,5 +1,23 @@
 {
     "language": "English",
     "signin": "Sign In",
-    "register": "Register"
+    "register": "Register",
+    "signin_title": "Welcome to Go2Bike!",
+    "signin_description": "New Generation of Smart Bike Sharing",
+    "register_title": "Register to Go2Bike",
+    "register_description": "Create your account",
+    "username": "Username",
+    "username_description": "Write here your username",
+    "email": "E-mail",
+    "email_description": "Write here your e-mail",
+    "password": "Password",
+    "password_description": "Write here your password",
+    "repeat_password": "Repeat password",
+    "repeat_password_description": "Repeat here your password",
+    "forgot_password": "Forgot your password?",
+    "signup_with": "Sign up with",
+    "no_account": "Don't have an account?",
+    "register_2": "Register",
+    "have_account": "Have an account?",
+    "signin_2": "Sign In"
 }

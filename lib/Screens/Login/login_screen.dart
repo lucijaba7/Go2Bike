@@ -6,6 +6,7 @@ import 'package:go2bike/components/language_footer.dart';
 import 'package:go2bike/components/rounded_button.dart';
 import 'package:go2bike/components/rounded_input_field.dart';
 import 'package:go2bike/components/rounded_password_field.dart';
+import 'package:go2bike/localization/app_localization.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -30,27 +31,29 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Text(
-                "Dobrodošli na Go2Bike!",
+                AppLocalization.of(context).translate('signin_title'),
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
                   fontSize: 18,
                 ),
               ),
               Text(
-                "Nova generacija Smart Bike Sharinga",
+                AppLocalization.of(context).translate('signin_description'),
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
               SizedBox(height: size.height * 0.05),
               RoundedInputField(
-                label: "KORISNIČKO IME",
-                hintText: "Upišite svoje korisničko ime",
+                label: AppLocalization.of(context).translate('username'),
+                hintText: AppLocalization.of(context)
+                    .translate('username_description'),
                 onChanged: (value) {},
               ),
               RoundedPasswordField(
-                label: "LOZINKA",
-                hintText: "Upišite svoju lozinku",
+                label: AppLocalization.of(context).translate('password'),
+                hintText: AppLocalization.of(context)
+                    .translate('password_description'),
                 onChanged: (value) {},
               ),
               Container(
@@ -61,12 +64,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: ForgotPassword(),
               ),
               RoundedButton(
-                text: "Prijava",
+                text: AppLocalization.of(context).translate('signin'),
                 press: () {},
               ),
               SizedBox(height: size.height * 0.02),
               Text(
-                "Prijavite se putem",
+                AppLocalization.of(context).translate('signup_with'),
               ),
               SizedBox(height: size.height * 0.02),
               Row(
@@ -108,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   );
                 },
               ),
-              LanguageFooter(),
+              LanguageFooter()
             ],
           ),
         ),

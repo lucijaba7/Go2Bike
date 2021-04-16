@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go2bike/constraints.dart';
+import 'package:go2bike/localization/app_localization.dart';
 
 class ForgotPassword extends StatelessWidget {
   final Function press;
@@ -13,7 +14,7 @@ class ForgotPassword extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Text(
-        "Zaboravili ste lozinku?",
+        AppLocalization.of(context).translate('forgot_password'),
         style: TextStyle(color: kSeconaryColor),
       ),
     );

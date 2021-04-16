@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go2bike/constraints.dart';
+import 'package:go2bike/localization/app_localization.dart';
 
 class AlreadyHaveAnAccountCheck extends StatelessWidget {
   final bool login;
@@ -16,12 +17,16 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(
-          login ? "Nemate račun? " : "Imate račun? ",
+          login
+              ? AppLocalization.of(context).translate('no_account')
+              : AppLocalization.of(context).translate('have_account'),
         ),
         GestureDetector(
           onTap: press,
           child: Text(
-            login ? "Registrirajte se" : "Prijavite se",
+            login
+                ? AppLocalization.of(context).translate('register')
+                : AppLocalization.of(context).translate('signin'),
             style: TextStyle(color: kSeconaryColor),
           ),
         ),

@@ -32,8 +32,6 @@ class _LanguageFooterState extends State<LanguageFooter> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      alignment: Alignment.bottomCenter,
       child: Column(
         children: <Widget>[
           Row(

@@ -1,5 +1,23 @@
 {
     "language": "Hrvatski",
     "signin": "Prijava",
-    "register": "Registracija"
+    "register": "Registracija",
+    "signin_title": "Dobrodošli na Go2Bike!",
+    "signin_description": "Nova generacija Smart Bike Sharinga",
+    "register_title": "Registriraj se na Go2Bike",
+    "register_description": "Izradi svoj korisnički račun",
+    "username": "Korisničk ime",
+    "username_description": "Upišite svoje korisničko ime",
+    "email": "E-mail",
+    "email_description": "Upišite svoju e-mail adresu",
+    "password": "Lozinka",
+    "password_description": "Upišite svoju lozinku",
+    "repeat_password": "Ponovite lozinku",
+    "repeat_password_description": "Ponovno upišite svoju lozinku",
+    "forgot_password": "Zaboravili ste lozinku?",
+    "signup_with": "Prijavite se putem",
+    "no_account": "Nemate račun?",
+    "register_2": "Registrirajte se",
+    "have_account": "Imate račun?",
+    "signin_2": "Prijavite se"
 }

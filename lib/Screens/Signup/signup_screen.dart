@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:go2bike/Screens/Login/login_screen.dart';
 import 'package:go2bike/components/already_have_an_account_check.dart';
 import 'package:go2bike/components/dropdown_button.dart';
+import 'package:go2bike/components/language_footer.dart';
 import 'package:go2bike/components/rounded_button.dart';
 import 'package:go2bike/components/rounded_input_field.dart';
 import 'package:go2bike/components/rounded_password_field.dart';
+import 'package:go2bike/localization/app_localization.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -30,43 +32,47 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               //SizedBox(height: size.height * 0.02),
               Text(
-                "Registriraj se na Go2Bike",
+                AppLocalization.of(context).translate('register_title'),
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
                   fontSize: 18,
                 ),
               ),
               Text(
-                "Izradi svoj korisnički račun",
+                AppLocalization.of(context).translate('register_description'),
                 style: TextStyle(
                   fontSize: 16,
                 ),
               ),
               SizedBox(height: size.height * 0.05),
               RoundedInputField(
-                label: "KORISNIČKO IME",
-                hintText: "Upišite svoje korisničko ime",
+                label: AppLocalization.of(context).translate('username'),
+                hintText: AppLocalization.of(context)
+                    .translate('username_description'),
                 onChanged: (value) {},
               ),
               RoundedInputField(
-                label: "E-MAIL",
+                label: AppLocalization.of(context).translate('email'),
                 email: true,
-                hintText: "Upišite svoju e-mail adresu",
+                hintText:
+                    AppLocalization.of(context).translate('email_description'),
                 onChanged: (value) {},
               ),
               RoundedPasswordField(
-                label: "LOZINKA",
-                hintText: "Upišite svoju lozinku",
+                label: AppLocalization.of(context).translate('password'),
+                hintText: AppLocalization.of(context)
+                    .translate('password_description'),
                 onChanged: (value) {},
               ),
               RoundedPasswordField(
-                label: "PONOVITE LOZINKU",
-                hintText: "Ponovno upišite svoju lozinku",
+                label: AppLocalization.of(context).translate('repeat_password'),
+                hintText: AppLocalization.of(context)
+                    .translate('repeat_password_description'),
                 onChanged: (value) {},
               ),
               DropdownButtonWidget(),
               RoundedButton(
-                text: "Registracija",
+                text: AppLocalization.of(context).translate('register'),
                 press: () {},
               ),
               SizedBox(height: size.height * 0.02),
@@ -82,7 +88,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   );
                 },
-              )
+              ),
+              LanguageFooter()
             ],
           ),
         ),
