@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/Screens/Signup/signup_screen.dart';
+import 'package:go2bike/screens/login/components/social_media.dart';
+import 'package:go2bike/screens/signup/signup_screen.dart';
 import 'package:go2bike/components/already_have_an_account_check.dart';
-import 'package:go2bike/components/forgot_password.dart';
+import 'package:go2bike/screens/login/components/forgot_password.dart';
 import 'package:go2bike/components/language_footer.dart';
 import 'package:go2bike/components/rounded_button.dart';
 import 'package:go2bike/components/rounded_input_field.dart';
@@ -25,10 +26,8 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Positioned(
-                child: Image.asset(
+              Image.asset(
                   "assets/images/Logo.png",
-                ),
               ),
               Text(
                 AppLocalization.of(context).translate('signin_title'),
@@ -68,36 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 press: () {},
               ),
               SizedBox(height: size.height * 0.02),
-              Text(
-                AppLocalization.of(context).translate('signup_with'),
-              ),
-              SizedBox(height: size.height * 0.02),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  RawMaterialButton(
-                    onPressed: () {},
-                    elevation: 2.0,
-                    fillColor: Colors.white,
-                    child: Image.asset(
-                      "assets/images/facebook.png",
-                      height: 60.0,
-                    ),
-                    shape: CircleBorder(),
-                  ),
-                  RawMaterialButton(
-                    onPressed: () {},
-                    elevation: 2.0,
-                    fillColor: Colors.white,
-                    child: Image.asset(
-                      "assets/images/google.png",
-                      height: 40.0,
-                    ),
-                    padding: EdgeInsets.all(10.0),
-                    shape: CircleBorder(),
-                  )
-                ],
-              ),
+              SocialMedia(),
               SizedBox(height: size.height * 0.02),
               AlreadyHaveAnAccountCheck(
                 press: () {
@@ -111,6 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   );
                 },
               ),
+              SizedBox(height: size.height * 0.02),
               LanguageFooter()
             ],
           ),

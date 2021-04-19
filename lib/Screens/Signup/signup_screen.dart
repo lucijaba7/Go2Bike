@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/Screens/Login/login_screen.dart';
-import 'package:go2bike/components/already_have_an_account_check.dart';
 import 'package:go2bike/components/dropdown_button.dart';
-import 'package:go2bike/components/language_footer.dart';
 import 'package:go2bike/components/rounded_button.dart';
-import 'package:go2bike/components/rounded_input_field.dart';
-import 'package:go2bike/components/rounded_password_field.dart';
+import 'package:go2bike/screens/login/login_screen.dart';
+import 'package:go2bike/components/already_have_an_account_check.dart';
+import 'package:go2bike/components/language_footer.dart';
 import 'package:go2bike/localization/app_localization.dart';
+import 'package:go2bike/screens/signup/components/signup_form.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -20,17 +19,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
+          margin: EdgeInsets.only(top: 50.0, bottom: 20.0),
           width: double.infinity,
           height: size.height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Positioned(
-                child: Image.asset(
-                  "assets/images/Logo.png",
-                ),
+              Image.asset(
+                   "assets/images/Logo.png",
               ),
-              //SizedBox(height: size.height * 0.02),
               Text(
                 AppLocalization.of(context).translate('register_title'),
                 style: TextStyle(
@@ -45,31 +42,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
               SizedBox(height: size.height * 0.05),
-              RoundedInputField(
-                label: AppLocalization.of(context).translate('username'),
-                hintText: AppLocalization.of(context)
-                    .translate('username_description'),
-                onChanged: (value) {},
-              ),
-              RoundedInputField(
-                label: AppLocalization.of(context).translate('email'),
-                email: true,
-                hintText:
-                    AppLocalization.of(context).translate('email_description'),
-                onChanged: (value) {},
-              ),
-              RoundedPasswordField(
-                label: AppLocalization.of(context).translate('password'),
-                hintText: AppLocalization.of(context)
-                    .translate('password_description'),
-                onChanged: (value) {},
-              ),
-              RoundedPasswordField(
-                label: AppLocalization.of(context).translate('repeat_password'),
-                hintText: AppLocalization.of(context)
-                    .translate('repeat_password_description'),
-                onChanged: (value) {},
-              ),
+              SignupForm(),
               DropdownButtonWidget(),
               RoundedButton(
                 text: AppLocalization.of(context).translate('register'),

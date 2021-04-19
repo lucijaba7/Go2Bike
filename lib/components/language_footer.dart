@@ -35,6 +35,7 @@ class _LanguageFooterState extends State<LanguageFooter> {
       child: Column(
         children: <Widget>[
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               //LanguageButton(),
               RawMaterialButton(
@@ -64,6 +65,7 @@ class _LanguageFooterState extends State<LanguageFooter> {
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text("UTE d.o.o "),
               Icon(
