@@ -9,6 +9,8 @@ import 'package:go2bike/components/rounded_input_field.dart';
 import 'package:go2bike/components/rounded_password_field.dart';
 import 'package:go2bike/localization/app_localization.dart';
 
+import '../main_page.dart';
+
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -64,7 +66,16 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               RoundedButton(
                 text: AppLocalization.of(context).translate('signin'),
-                press: () {},
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return MainPage();
+                      },
+                    ),
+                  );
+                },
               ),
               SizedBox(height: size.height * 0.02),
               SocialMedia(),
