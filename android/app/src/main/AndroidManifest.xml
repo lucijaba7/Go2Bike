@@ -9,6 +9,8 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="go2bike"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyBls3gVs3WQ7BN6ViC4_3J73hkzti8rsJY"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

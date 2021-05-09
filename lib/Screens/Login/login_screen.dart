@@ -9,7 +9,7 @@ import 'package:go2bike/components/rounded_input_field.dart';
 import 'package:go2bike/components/rounded_password_field.dart';
 import 'package:go2bike/localization/app_localization.dart';
 
-import '../main_page.dart';
+import '../main_page/main_page.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
