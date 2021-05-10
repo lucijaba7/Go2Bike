@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go2bike/localization/app_localization.dart';
 import 'package:go2bike/screens/account/account_screen.dart';
-
 import '../../../constraints.dart';
 import '../../../custom_icons_icons.dart';
 
@@ -30,43 +30,48 @@ class NavigationDrawer extends StatelessWidget {
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 12.0),
-                  padding: const EdgeInsets.only(left: 25.0),
                   width: size.width,
                   height: size.height * 0.08,
-                  decoration: BoxDecoration(
-                    color: kPrimaryLightColor),
-            
-                    child: Row(
-                      children: [
+                  decoration: BoxDecoration(color: kPrimaryLightColor),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 25.0, top: 10.0),
-                          child: Column(children: [
-                            Row(children: [Text("Stanje računa: 0kn")]),
-                            const SizedBox(height: 12),
-                            Row(
-                              children: [Text("Broj vožnji: 2")])
-                          ],),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Text(AppLocalization.of(context).translate('account_balance') + " 0" + "kn")
+                              ]),
+                              const SizedBox(height: 12),
+                              Row(
+                                children: [
+                                  Text(AppLocalization.of(context).translate('num_of_rides') + " 2")
+                              ]),
+                            ]),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 24.0, right: 2.0),
-                          child: Column(children: [Icon(CustomIcons.right_arrow, color: kPrimaryDarkColor)],),
+                          padding: const EdgeInsets.only(right: 25.0),
+                          child: Row(
+                            children: [
+                              Icon(CustomIcons.right_arrow, color: kPrimaryDarkColor, size: 16)
+                            ],),
                         )
-                      ]),
+                    ]),
                   )
-                
-              ],),
-            //const SizedBox(height: 48),
-            buildMenuItem(text: 'MOJ RAČUN', icon: CustomIcons.account, onClicked: () => selectedItem(context, 0)),
-            buildMenuItem(text: 'NAČINI PLAĆANJA', icon: CustomIcons.credit_card),
-            buildMenuItem(text: 'TARIFE', icon: CustomIcons.money),
-            buildMenuItem(text: 'PRIJAVA KVARA', icon: CustomIcons.wrench),
-            buildMenuItem(text: 'REGISTRACIJE', icon: CustomIcons.key),
-            buildMenuItem(text: 'PROMOCIJE', icon: CustomIcons.giftbox),
-            buildMenuItem(text: 'ODJAVA', icon: CustomIcons.logout)
-          ],
-        ),
-      ),
-    );
+                ],
+            ),
+            buildMenuItem(text: AppLocalization.of(context).translate('my_account').toUpperCase(), icon: CustomIcons.account, onClicked: () => selectedItem(context, 0)),
+            buildMenuItem(text: AppLocalization.of(context).translate('payment_methods').toUpperCase(), icon: CustomIcons.credit_card),
+            buildMenuItem(text: AppLocalization.of(context).translate('tariffs').toUpperCase(), icon: CustomIcons.money),
+            buildMenuItem(text: AppLocalization.of(context).translate('malfunction_report').toUpperCase(), icon: CustomIcons.wrench),
+            buildMenuItem(text: AppLocalization.of(context).translate('registrations').toUpperCase(), icon: CustomIcons.key),
+            buildMenuItem(text: AppLocalization.of(context).translate('promotions').toUpperCase(), icon: CustomIcons.giftbox),
+            buildMenuItem(text: AppLocalization.of(context).translate('logout').toUpperCase(), icon: CustomIcons.logout)
+          ]),
+    ));
   }
 
   Widget buildMenuItem({String text, IconData icon, VoidCallback onClicked}) {

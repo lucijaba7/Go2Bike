@@ -12,7 +12,7 @@ class MainPage extends StatelessWidget {
       key: _scaffoldKey,
       drawer: NavigationDrawer(),
       body: Stack(children: <Widget>[
-        ShowGoogleMap(),
+        //ShowGoogleMap(),
         Positioned(
           top: 70,
           right: 35,
@@ -41,7 +41,6 @@ class MainPage extends StatelessWidget {
                       onPressed: () {
                         print("Otvaraaam");
                          _scaffoldKey.currentState.openDrawer();
-                        //Scaffold.of(context).openDrawer();
                       },
                     ),
                   ),
@@ -52,19 +51,6 @@ class MainPage extends StatelessWidget {
               ),
             )
           ),   
-        /*Container(
-            width: double.infinity,
-            height: size.height,
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    "Uspješan login!",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w900,
-                    ),
-                  )])
-          )*/
       ])
     );
   }

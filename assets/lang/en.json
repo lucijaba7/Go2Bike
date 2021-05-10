@@ -19,5 +19,19 @@
     "no_account": "Don't have an account?",
     "register_2": "Register",
     "have_account": "Have an account?",
-    "signin_2": "Sign In"
+    "signin_2": "Sign In",
+    "account_balance": "Account balance:",
+    "num_of_rides": "Number of rides:",
+    "my_account": "My Account",
+    "payment_methods": "Payment Methods",
+    "tariffs": "Triffs",
+    "malfunction_report": "Malfunction Report",
+    "registrations": "Registrations",
+    "promotions": "Promotions",
+    "logout": "Logout",
+    "personal_data": "Personal data",
+    "bike_rents": "Bike rents",
+    "payments": "Payments",
+    "rfid_cards": "RFID cards",
+    "lang_selection": "Language selection"
 }

@@ -19,5 +19,19 @@
     "no_account": "Nemate račun?",
     "register_2": "Registrirajte se",
     "have_account": "Imate račun?",
-    "signin_2": "Prijavite se"
+    "signin_2": "Prijavite se",
+    "account_balance": "Stanje računa:",
+    "num_of_rides": "Broj vožnji:",
+    "my_account": "Moj račun",
+    "payment_methods": "Načini plaćanja",
+    "tariffs": "Tarife",
+    "malfunction_report": "Prijava kvara",
+    "registrations": "Registracije",
+    "promotions": "Promocije",
+    "logout": "Odjava",
+    "personal_data": "Osobne informacije",
+    "bike_rents": "Pregled vožnji",
+    "payments": "Plaćanja",
+    "rfid_cards": "RFID kartice",
+    "lang_selection": "Odabir jezika"
 }
