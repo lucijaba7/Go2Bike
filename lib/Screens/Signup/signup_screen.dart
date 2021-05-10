@@ -43,7 +43,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               SizedBox(height: size.height * 0.05),
               SignupForm(),
-              DropdownButtonWidget(),
+              DropdownButtonWidget(dropdownValue: "Pula", values: ['Pula', 'Rijeka', 'Karlovac'],),
               RoundedButton(
                 text: AppLocalization.of(context).translate('register'),
                 press: () {},

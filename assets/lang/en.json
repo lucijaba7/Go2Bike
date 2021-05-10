@@ -33,5 +33,15 @@
     "bike_rents": "Bike rents",
     "payments": "Payments",
     "rfid_cards": "RFID cards",
-    "lang_selection": "Language selection"
+    "lang_selection": "Language selection",
+    "first_name": "First name",
+    "last_name": "Last name",
+    "oib": "PIN/VATIN",
+    "phone_number": "Phone number",
+    "address": "Address",
+    "city": "City",
+    "postal_code": "Postal code",
+    "pass_change": "Change password",
+    "change": "Change",
+    "save": "Save"
 }

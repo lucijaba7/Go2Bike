@@ -33,5 +33,15 @@
     "bike_rents": "Pregled vožnji",
     "payments": "Plaćanja",
     "rfid_cards": "RFID kartice",
-    "lang_selection": "Odabir jezika"
+    "lang_selection": "Odabir jezika",
+    "first_name": "Ime",
+    "last_name": "Prezime",
+    "oib": "OIB",
+    "phone_number": "Telefonski broj",
+    "address": "Adresa",
+    "city": "Grad",
+    "postal_code": "Poštanski broj",
+    "pass_change": "Promijeni lozinku",
+    "change": "Promijeni",
+    "save": "Spremi"
 }

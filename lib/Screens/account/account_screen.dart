@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go2bike/localization/app_localization.dart';
 import '../../constraints.dart';
-import 'components/accountMenu.dart';
+import 'components/account_menu.dart';
 
 class Account extends StatefulWidget {
   @override
