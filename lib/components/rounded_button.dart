@@ -19,22 +19,9 @@ class RoundedButton extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       width: size.width * 0.8,
-      decoration: BoxDecoration(
-          // neki shadow na botun
-          borderRadius: BorderRadius.circular(29),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 0.0,
-              blurRadius: 5.0,
-              offset: Offset(0.0, 0.75), // changes position of shadow
-            ),
-          ]),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
-        child: FlatButton(
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-          color: color,
+        child: TextButton(
           onPressed: press,
           child: Text(
             text,
@@ -42,6 +29,15 @@ class RoundedButton extends StatelessWidget {
               color: textColor,
               fontSize: 20,
             ),
+          ),
+          style: ButtonStyle(
+            padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(15)),
+            backgroundColor: MaterialStateProperty.all<Color>(color),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0),
+              )
+            )
           ),
         ),
       ),

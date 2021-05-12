@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go2bike/localization/app_localization.dart';
+import 'package:go2bike/screens/account/components/rent_card.dart';
 import '../../constraints.dart';
 
 class BikeRents extends StatelessWidget {
@@ -12,7 +13,11 @@ class BikeRents extends StatelessWidget {
         backgroundColor: kSeconaryColor
       ),
       body: SingleChildScrollView(
-        child: Text("aa")
+        child: Column(
+          children: [
+            RentCard()
+          ],
+        )
     ));
   }
 }

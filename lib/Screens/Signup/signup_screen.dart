@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/components/dropdown_button.dart';
+import 'package:go2bike/screens/signup/components/dropdown_button.dart';
 import 'package:go2bike/components/rounded_button.dart';
 import 'package:go2bike/screens/login/login_screen.dart';
 import 'package:go2bike/components/already_have_an_account_check.dart';
@@ -43,7 +43,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               SizedBox(height: size.height * 0.05),
               SignupForm(),
-              DropdownButtonWidget(dropdownValue: "Pula", values: ['Pula', 'Rijeka', 'Karlovac'],),
+              DropdownButtonWidget(),
               RoundedButton(
                 text: AppLocalization.of(context).translate('register'),
                 press: () {},

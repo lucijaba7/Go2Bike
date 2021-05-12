@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-
-import '../constraints.dart';
+import '../../../constraints.dart';
 
 class DropdownButtonWidget extends StatefulWidget {
-  String dropdownValue; //Pula
-  List<String> values;
-  DropdownButtonWidget({Key key, this.dropdownValue, this.values}) : super(key: key);
+  DropdownButtonWidget({Key key}) : super(key: key);
 
   @override
   _DropdownButtonWidgetState createState() => _DropdownButtonWidgetState();
 }
 
 class _DropdownButtonWidgetState extends State<DropdownButtonWidget> {
+  String dropdownValue = 'Pula'; 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -37,16 +35,16 @@ class _DropdownButtonWidgetState extends State<DropdownButtonWidget> {
             borderRadius: BorderRadius.circular(29),
             child: DropdownButtonHideUnderline(
                 child: DropdownButton<String>(
-              value: widget.dropdownValue,
+              value: dropdownValue,
               icon: Icon(Icons.arrow_right),
               iconSize: 24,
               elevation: 16,
               onChanged: (String newValue) {
                 setState(() {
-                  widget.dropdownValue = newValue;
+                  dropdownValue = newValue;
                 });
               },
-              items: widget.values
+              items: ['Pula', 'Rijeka', 'Karlovac']
                   .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,

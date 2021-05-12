@@ -7,6 +7,7 @@ import '../../constraints.dart';
 class PersonalData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalization.of(context).translate('personal_data')),
@@ -23,6 +24,7 @@ class PersonalData extends StatelessWidget {
                   text: AppLocalization.of(context).translate('save'),
                   press: () {},
                 ),
+                SizedBox(height: size.height * 0.02),
               ]
             ),
           )
