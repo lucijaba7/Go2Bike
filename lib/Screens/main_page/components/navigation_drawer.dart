@@ -9,68 +9,86 @@ class NavigationDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Drawer(
-      child: Material(
-        color: Colors.white,
-        child: ListView(
+        child: Material(
+      color: Colors.white,
+      child: ListView(children: [
+        Column(
           children: [
-            Column(
+            Row(
               children: [
-                Row(
+                Padding(
+                    padding: const EdgeInsets.only(left: 25.0, top: 30.0),
+                    child: Text(
+                      "IVANA IVIĆ",
+                      style: TextStyle(
+                        fontFamily: "JosefinSansBold",
+                        fontSize: 34,
+                        color: kPrimaryDarkColor,
+                      ),
+                    ))
+              ],
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 12.0),
+              width: size.width,
+              height: size.height * 0.08,
+              decoration: BoxDecoration(color: kPrimaryLightColor),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 25.0, top: 30.0),
-                      child: Text("IVANA IVIĆ", 
-                        style: TextStyle(
-                          fontFamily: "JosefinSansBold",
-                          fontSize: 34,
-                          color: kPrimaryDarkColor,
-                        ),
-                    ))
-                  ],
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 12.0),
-                  width: size.width,
-                  height: size.height * 0.08,
-                  decoration: BoxDecoration(color: kPrimaryLightColor),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 25.0, top: 10.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Text(AppLocalization.of(context).translate('account_balance') + " 0" + "kn")
-                              ]),
-                              const SizedBox(height: 12),
-                              Row(
-                                children: [
-                                  Text(AppLocalization.of(context).translate('num_of_rides') + " 2")
-                              ]),
+                      padding: const EdgeInsets.only(left: 25.0, top: 10.0),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(children: [
+                              Text(getTranslated(context, 'account_balance') +
+                                  " 0" +
+                                  "kn")
                             ]),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 25.0),
-                          child: Row(
-                            children: [
-                              Icon(CustomIcons.right_arrow, color: kPrimaryDarkColor, size: 16)
-                            ],),
-                        )
-                    ]),
-                  )
-                ],
-            ),
-            buildMenuItem(text: AppLocalization.of(context).translate('my_account').toUpperCase(), icon: CustomIcons.account, onClicked: () => selectedItem(context, 0)),
-            buildMenuItem(text: AppLocalization.of(context).translate('payment_methods').toUpperCase(), icon: CustomIcons.credit_card),
-            buildMenuItem(text: AppLocalization.of(context).translate('tariffs').toUpperCase(), icon: CustomIcons.money),
-            buildMenuItem(text: AppLocalization.of(context).translate('malfunction_report').toUpperCase(), icon: CustomIcons.wrench),
-            buildMenuItem(text: AppLocalization.of(context).translate('registrations').toUpperCase(), icon: CustomIcons.key),
-            buildMenuItem(text: AppLocalization.of(context).translate('promotions').toUpperCase(), icon: CustomIcons.giftbox),
-            buildMenuItem(text: AppLocalization.of(context).translate('logout').toUpperCase(), icon: CustomIcons.logout)
-          ]),
+                            const SizedBox(height: 12),
+                            Row(children: [
+                              Text(
+                                  getTranslated(context, 'num_of_rides') + " 2")
+                            ]),
+                          ]),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 25.0),
+                      child: Row(
+                        children: [
+                          Icon(CustomIcons.right_arrow,
+                              color: kPrimaryDarkColor, size: 16)
+                        ],
+                      ),
+                    )
+                  ]),
+            )
+          ],
+        ),
+        buildMenuItem(
+            text: getTranslated(context, 'my_account').toUpperCase(),
+            icon: CustomIcons.account,
+            onClicked: () => selectedItem(context, 0)),
+        buildMenuItem(
+            text: getTranslated(context, 'payment_methods').toUpperCase(),
+            icon: CustomIcons.credit_card),
+        buildMenuItem(
+            text: getTranslated(context, 'tariffs').toUpperCase(),
+            icon: CustomIcons.money),
+        buildMenuItem(
+            text: getTranslated(context, 'malfunction_report').toUpperCase(),
+            icon: CustomIcons.wrench),
+        buildMenuItem(
+            text: getTranslated(context, 'registrations').toUpperCase(),
+            icon: CustomIcons.key),
+        buildMenuItem(
+            text: getTranslated(context, 'promotions').toUpperCase(),
+            icon: CustomIcons.giftbox),
+        buildMenuItem(
+            text: getTranslated(context, 'logout').toUpperCase(),
+            icon: CustomIcons.logout)
+      ]),
     ));
   }
 
@@ -95,9 +113,7 @@ class NavigationDrawer extends StatelessWidget {
   void selectedItem(BuildContext context, int index) {
     switch (index) {
       case 0:
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => Account(),
-        ));
+        Navigator.of(context).pushNamed(Account.routeName);
         break;
     }
   }

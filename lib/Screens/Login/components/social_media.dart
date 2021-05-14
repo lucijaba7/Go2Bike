@@ -9,7 +9,7 @@ class SocialMedia extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(
-          AppLocalization.of(context).translate('signin_with'),
+          getTranslated(context, 'signin_with'),
         ),
         SizedBox(height: size.height * 0.02),
         Row(

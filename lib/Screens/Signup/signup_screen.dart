@@ -7,12 +7,9 @@ import 'package:go2bike/components/language_footer.dart';
 import 'package:go2bike/localization/app_localization.dart';
 import 'package:go2bike/screens/signup/components/signup_form.dart';
 
-class SignUpScreen extends StatefulWidget {
-  @override
-  _SignUpScreenState createState() => _SignUpScreenState();
-}
+class SignUpScreen extends StatelessWidget {
+  static const routeName = '/sign-up';
 
-class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -26,17 +23,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image.asset(
-                   "assets/images/Logo.png",
+                "assets/images/Logo.png",
               ),
               Text(
-                AppLocalization.of(context).translate('register_title'),
+                getTranslated(context, 'register_title'),
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
                   fontSize: 18,
                 ),
               ),
               Text(
-                AppLocalization.of(context).translate('register_description'),
+                getTranslated(context, 'register_description'),
                 style: TextStyle(
                   fontSize: 16,
                 ),
@@ -45,21 +42,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
               SignupForm(),
               DropdownButtonWidget(),
               RoundedButton(
-                text: AppLocalization.of(context).translate('register'),
+                text: getTranslated(context, 'register'),
                 press: () {},
               ),
               SizedBox(height: size.height * 0.02),
               AlreadyHaveAnAccountCheck(
                 login: false,
                 press: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return LoginScreen();
-                      },
-                    ),
-                  );
+                  Navigator.of(context).pushNamed(LoginScreen.routeName);
                 },
               ),
               LanguageFooter()

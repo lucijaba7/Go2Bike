@@ -20,39 +20,40 @@ class RoundedPasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[ 
-      Padding(
-        padding: const EdgeInsets.only(left: 8.0),
-        child: Text(
-          label,
-          style: TextStyle(
-            fontWeight: FontWeight.w700,
-          ),
-          /*suffixIcon: Icon(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Text(
+              label,
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+              ),
+              /*suffixIcon: Icon(
             Icons.visibility,
             color: kPrimaryDarkColor,
           ),*/
-        ),
-      ),
-      TextFieldContainer(
-        child: TextFormField(
-          obscureText: true,
-          onChanged: onChanged,
-          decoration: InputDecoration(
-            hintText: hintText,
-            icon: Icon(
-              Icons.lock,
-              color: kPrimaryDarkColor,
             ),
-           /* suffixIcon: Icon(
+          ),
+          TextFieldContainer(
+            child: TextFormField(
+              obscureText: true,
+              onChanged: onChanged,
+              decoration: InputDecoration(
+                hintText: hintText,
+                icon: Icon(
+                  Icons.lock,
+                  color: kPrimaryDarkColor,
+                ),
+                /* suffixIcon: Icon(
               Icons.visibility,
               color: kPrimaryDarkColor,
             ),*/
-            border: InputBorder.none,
-          ),
-        ),
-      )
-    ]);
+                border: InputBorder.none,
+              ),
+              textInputAction: TextInputAction.next,
+            ),
+          )
+        ]);
   }
 }

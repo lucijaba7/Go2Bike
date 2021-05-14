@@ -19,7 +19,7 @@ class AccountMenu extends StatelessWidget {
                 builder: (context) => PersonalData(),
               ));
             },
-            child: AccountMenuItem(text: AppLocalization.of(context).translate('personal_data'))
+            child: AccountMenuItem(text: getTranslated(context, 'personal_data'))
           ), 
           Divider(thickness: 1.3),
           InkWell(
@@ -28,17 +28,17 @@ class AccountMenu extends StatelessWidget {
                 builder: (context) => BikeRents(),
               ));
             },
-            child: AccountMenuItem(text: AppLocalization.of(context).translate('bike_rents')),
+            child: AccountMenuItem(text: getTranslated(context, 'bike_rents')),
           ),
           Divider(thickness: 1.3),
           InkWell(
             onTap: () {},
-            child: AccountMenuItem(text: AppLocalization.of(context).translate('payments')),
+            child: AccountMenuItem(text: getTranslated(context, 'payments')),
           ),
           Divider(thickness: 1.3),
           InkWell(
             onTap: () {},
-            child: AccountMenuItem(text: AppLocalization.of(context).translate('rfid_cards')),
+            child: AccountMenuItem(text: getTranslated(context, 'rfid_cards')),
           ),
           Divider(thickness: 1.3),
           InkWell(
@@ -47,12 +47,12 @@ class AccountMenu extends StatelessWidget {
                 builder: (context) => ChangePassword(),
               ));
             },
-            child: AccountMenuItem(text: AppLocalization.of(context).translate('pass_change')),
+            child: AccountMenuItem(text: getTranslated(context, 'pass_change')),
           ),
           Divider(thickness: 1.3),
           InkWell(
             onTap: () {},
-            child: AccountMenuItem(text: AppLocalization.of(context).translate('lang_selection')),
+            child: AccountMenuItem(text: getTranslated(context, 'lang_selection')),
           )
       ],),
     );

@@ -47,3 +47,5 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalization> {
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
+
+String getTranslated(BuildContext context, String key) => AppLocalization.of(context).translate(key);

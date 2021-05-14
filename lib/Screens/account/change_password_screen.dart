@@ -5,41 +5,36 @@ import 'package:go2bike/localization/app_localization.dart';
 import '../../constraints.dart';
 
 class ChangePassword extends StatelessWidget {
+  static const routeName = '/change-password';
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold( 
-      appBar: AppBar(
-        title: Text(AppLocalization.of(context).translate('pass_change')),
-        centerTitle: true,
-        backgroundColor: kSeconaryColor
-      ),
-      body: SingleChildScrollView(
-        child:
-          Center(
-            child: Column(
-              children: [
-                SizedBox(height: size.height * 0.05),
-                RoundedPasswordField(
-                  label: AppLocalization.of(context).translate('password'),
-                  hintText: AppLocalization.of(context)
-                      .translate('password_description'),
-                  onChanged: (value) {},
-                ),
-                RoundedPasswordField(
-                  label: AppLocalization.of(context).translate('repeat_password'),
-                  hintText: AppLocalization.of(context)
-                      .translate('repeat_password_description'),
-                  onChanged: (value) {},
-                ),
-                SizedBox(height: size.height * 0.02),
-                RoundedButton(
-                  text: AppLocalization.of(context).translate('change'),
-                  press: () {},
-                ),
-              ]
+    return Scaffold(
+        appBar: AppBar(
+            title: Text(getTranslated(context, 'pass_change')),
+            centerTitle: true,
+            backgroundColor: kSeconaryColor),
+        body: SingleChildScrollView(
+            child: Center(
+          child: Column(children: [
+            SizedBox(height: size.height * 0.05),
+            RoundedPasswordField(
+              label: getTranslated(context, 'password'),
+              hintText: getTranslated(context, 'password_description'),
+              onChanged: (value) {},
             ),
-          )
-    ));
+            RoundedPasswordField(
+              label: getTranslated(context, 'repeat_password'),
+              hintText: getTranslated(context, 'repeat_password_description'),
+              onChanged: (value) {},
+            ),
+            SizedBox(height: size.height * 0.02),
+            RoundedButton(
+              text: getTranslated(context, 'change'),
+              press: () {},
+            ),
+          ]),
+        )));
   }
 }

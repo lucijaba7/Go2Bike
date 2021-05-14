@@ -14,7 +14,7 @@ class ForgotPassword extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Text(
-        AppLocalization.of(context).translate('forgot_password'),
+        getTranslated(context, 'forgot_password'),
         style: TextStyle(color: kSeconaryColor),
       ),
     );

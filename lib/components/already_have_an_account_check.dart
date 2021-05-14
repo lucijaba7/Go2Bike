@@ -18,15 +18,15 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
       children: <Widget>[
         Text(
           login
-              ? AppLocalization.of(context).translate('no_account')
-              : AppLocalization.of(context).translate('have_account'),
+              ? getTranslated(context, 'no_account')
+              : getTranslated(context, 'have_account'),
         ),
         GestureDetector(
           onTap: press,
           child: Text(
             login
-                ? AppLocalization.of(context).translate('register')
-                : AppLocalization.of(context).translate('signin'),
+                ? getTranslated(context, 'register')
+                : getTranslated(context, 'signin'),
             style: TextStyle(color: kSeconaryColor),
           ),
         ),

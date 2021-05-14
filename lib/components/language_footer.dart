@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:footer/footer.dart';
 import 'package:go2bike/constraints.dart';
 import 'package:go2bike/main.dart';
 
@@ -31,53 +32,53 @@ class _LanguageFooterState extends State<LanguageFooter> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              //LanguageButton(),
-              RawMaterialButton(
-                onPressed: () {
-                  _changeLanguage('en');
-                },
-                elevation: 2.0,
-                fillColor: Colors.white,
-                constraints: BoxConstraints.tight(Size(20, 20)),
-                child: Image.asset(
-                  "assets/images/united-kingdom.png",
-                ),
-                shape: CircleBorder(),
+    // return Expanded(
+    //   child:
+    return Column(
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            //LanguageButton(),
+            RawMaterialButton(
+              onPressed: () {
+                _changeLanguage('en');
+              },
+              elevation: 2.0,
+              fillColor: Colors.white,
+              constraints: BoxConstraints.tight(Size(20, 20)),
+              child: Image.asset(
+                "assets/images/united-kingdom.png",
               ),
-              RawMaterialButton(
-                onPressed: () {
-                  _changeLanguage('hr');
-                },
-                elevation: 2.0,
-                fillColor: Colors.white,
-                constraints: BoxConstraints.tight(Size(20, 20)),
-                child: Image.asset(
-                  "assets/images/croatia.png",
-                ),
-                shape: CircleBorder(),
+              shape: CircleBorder(),
+            ),
+            RawMaterialButton(
+              onPressed: () {
+                _changeLanguage('hr');
+              },
+              elevation: 2.0,
+              fillColor: Colors.white,
+              constraints: BoxConstraints.tight(Size(20, 20)),
+              child: Image.asset(
+                "assets/images/croatia.png",
               ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text("UTE d.o.o "),
-              Icon(
-                Icons.copyright,
-                color: kPrimaryDarkColor,
-                size: 14,
-              ),
-              Text("2020."),
-            ],
-          ),
-        ],
-      ),
+              shape: CircleBorder(),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text("UTE d.o.o "),
+            Icon(
+              Icons.copyright,
+              color: kPrimaryDarkColor,
+              size: 14,
+            ),
+            Text("2020."),
+          ],
+        ),
+      ],
     );
   }
 }
