@@ -15,6 +15,7 @@ import 'screens/account/account_screen.dart';
 import 'screens/account/bike_rents_screen.dart';
 import 'screens/account/change_password_screen.dart';
 import 'screens/account/personal_data_screen.dart';
+import 'screens/tariffs/tariffs_screen.dart';
 
 void main() => runApp(MyApp());
 

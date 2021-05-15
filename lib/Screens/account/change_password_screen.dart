@@ -32,6 +32,7 @@ class ChangePassword extends StatelessWidget {
             SizedBox(height: size.height * 0.02),
             RoundedButton(
               text: getTranslated(context, 'change'),
+              val: 0.4,
               press: () {},
             ),
           ]),

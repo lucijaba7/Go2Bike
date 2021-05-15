@@ -24,6 +24,8 @@
     "signin_2": "Prijavite se",
     "error": "Došlo je do pogreške!",
     "error_message_default": "Neuspješna autentikacija. Molimo pokušajte ponovno kasnije.",
+    "QR_scanner": "QR SKENER",
+    "cancel": "Odustani",
     "account_balance": "Stanje računa:",
     "num_of_rides": "Broj vožnji:",
     "my_account": "Moj račun",
@@ -47,5 +49,14 @@
     "postal_code": "Poštanski broj",
     "pass_change": "Promijeni lozinku",
     "change": "Promijeni",
-    "save": "Spremi"
+    "save": "Spremi",
+    "standard": "standardna",
+    "daily": "dnevna",
+    "monthly": "mjesečna",
+    "hour": "sat",
+    "day": "dan",
+    "month": "mj",
+    "buy_code": "Kupi kod",
+    "additional_info": "Dodatne informacije",
+    "info_text": "Prekoračenje: 10,00 kn /sat - tolerira se prekoračenje do 5 min. \n\nUkoliko korisnik posjeduje kod na period duži od 2 h može isti dan koristiti drugu biciklu ili istu biciklu nakon prolaska 5 minuta."
 }

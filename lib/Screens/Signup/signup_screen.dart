@@ -41,6 +41,15 @@ class SignUpScreen extends StatelessWidget {
               ),
               SizedBox(height: size.height * 0.05),
               SignupForm(),
+<<<<<<< HEAD
+=======
+              DropdownButtonWidget(),
+              RoundedButton(
+                text: getTranslated(context, 'register'),
+                val: 0.8,
+                press: () {},
+              ),
+>>>>>>> 50f707ce9d90c304a4af02c4a11215870cb945e3
               SizedBox(height: size.height * 0.02),
               AlreadyHaveAnAccountCheck(
                 login: false,
