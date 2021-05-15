@@ -106,6 +106,7 @@ class _SignupFormState extends State<SignupForm> {
           ),
           RoundedButton(
             text: getTranslated(context, 'register'),
+            val: 0.8,
             press: _submit,
           ),
         ],

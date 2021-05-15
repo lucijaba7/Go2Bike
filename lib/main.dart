@@ -52,8 +52,7 @@ class _MyAppState extends State<MyApp> {
       ],
       child: Consumer<Auth>(
         builder: (ctx, auth, _) {
-          _isAuth = auth.isAuth;
-          print(_isAuth);
+          print(auth.isAuth);
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Go2Bike',
@@ -87,7 +86,7 @@ class _MyAppState extends State<MyApp> {
               }
               return supportedLocales.first;
             },
-            home: _isAuth ? MainPage() : WelcomeScreen(),
+            home: auth.isAuth ? MainPage() : WelcomeScreen(),
             routes: {
               WelcomeScreen.routeName: (ctx) => WelcomeScreen(),
               LoginScreen.routeName: (ctx) => LoginScreen(),

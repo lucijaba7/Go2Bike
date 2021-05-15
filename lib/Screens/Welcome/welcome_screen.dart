@@ -15,50 +15,40 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      // body: Container(
-      //   height: size.height,
-      //   width: double.infinity,
-      //   child: Center(
-      body: Center(
-        heightFactor: 4,
-        child: FooterView(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            //SizedBox(height: size.height * 0.04),
-            Center(
-              child: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  //crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Image.asset(
-                      "assets/images/Logo.png",
-                    ),
-                    SizedBox(height: size.height * 0.04),
-                    RoundedButton(
-                      text: getTranslated(context, 'signin'),
-                      val: 0.8,
-                      press: () {
-                        Navigator.of(context).pushNamed(LoginScreen.routeName);
-                      },
-                    ),
-                    RoundedButton(
-                      text: getTranslated(context, 'register'),
-                      val: 0.8,
-                      color: Colors.white,
-                      textColor: kPrimaryDarkColor,
-                      press: () {
-                        Navigator.of(context).pushNamed(SignUpScreen.routeName);
-                      },
-                    ),
-                  ],
+      body: Container(
+        height: size.height,
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Image.asset(
+                  "assets/images/Logo.png",
                 ),
-              ),
+                SizedBox(height: size.height * 0.04),
+                RoundedButton(
+                  text: getTranslated(context, 'signin'),
+                  val: 0.8,
+                  press: () {
+                    Navigator.of(context).pushNamed(LoginScreen.routeName);
+                  },
+                ),
+                RoundedButton(
+                  text: getTranslated(context, 'register'),
+                  val: 0.8,
+                  color: Colors.white,
+                  textColor: kPrimaryDarkColor,
+                  press: () {
+                    Navigator.of(context).pushNamed(SignUpScreen.routeName);
+                  },
+                ),
+              ],
             ),
+            LanguageFooter(),
           ],
-          footer: Footer(
-            child: LanguageFooter(),
-          ),
         ),
       ),
     );

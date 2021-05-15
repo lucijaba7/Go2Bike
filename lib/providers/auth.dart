@@ -58,6 +58,7 @@ class Auth with ChangeNotifier {
       );
       notifyListeners();
     } catch (error) {
+      print('eeeeeeeeeeeeee');
       throw error;
     }
   }

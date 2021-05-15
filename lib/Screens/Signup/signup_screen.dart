@@ -17,15 +17,14 @@ class SignUpScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
-          height: size.height,
           padding: EdgeInsets.all(size.width * 0.1),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              // Image.asset(
-              //   "assets/images/Logo.png",
-              // ),
+              Image.asset(
+                "assets/images/Logo.png",
+              ),
               Text(
                 getTranslated(context, 'register_title'),
                 style: TextStyle(
@@ -41,15 +40,6 @@ class SignUpScreen extends StatelessWidget {
               ),
               SizedBox(height: size.height * 0.05),
               SignupForm(),
-<<<<<<< HEAD
-=======
-              DropdownButtonWidget(),
-              RoundedButton(
-                text: getTranslated(context, 'register'),
-                val: 0.8,
-                press: () {},
-              ),
->>>>>>> 50f707ce9d90c304a4af02c4a11215870cb945e3
               SizedBox(height: size.height * 0.02),
               AlreadyHaveAnAccountCheck(
                 login: false,

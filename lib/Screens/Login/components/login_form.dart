@@ -36,6 +36,7 @@ class _LoginFormState extends State<LoginForm> {
         actions: <Widget>[
           RoundedButton(
             text: 'OK',
+            val: 0.2,
             press: () {
               Navigator.of(ctx).pop();
             },
@@ -59,6 +60,7 @@ class _LoginFormState extends State<LoginForm> {
         _authData['email'],
         _authData['password'],
       );
+      Navigator.of(context).pop();
     } on HttpException catch (error) {
       var errorMessage = 'Authentication failed';
       print(error);
@@ -112,6 +114,7 @@ class _LoginFormState extends State<LoginForm> {
           else
             RoundedButton(
               text: getTranslated(context, 'signin'),
+              val: 0.8,
               press: _submit,
               // press: () {
               //   // can't import routeName

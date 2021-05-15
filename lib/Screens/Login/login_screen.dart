@@ -23,7 +23,6 @@ class LoginScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
-          height: size.height,
           padding: EdgeInsets.all(size.width * 0.1),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -53,7 +52,7 @@ class LoginScreen extends StatelessWidget {
               AlreadyHaveAnAccountCheck(
                 press: () {
                   // can't import routeName
-                  Navigator.of(context).pushNamed('sign-up');
+                  Navigator.of(context).pushNamed('/sign-up');
                 },
               ),
               SizedBox(height: size.height * 0.02),
