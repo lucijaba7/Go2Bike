@@ -31,14 +31,13 @@ class RoundedButton extends StatelessWidget {
             ),
           ),
           style: ButtonStyle(
-            padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(15)),
-            backgroundColor: MaterialStateProperty.all<Color>(color),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
+              padding:
+                  MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(15)),
+              backgroundColor: MaterialStateProperty.all<Color>(color),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18.0),
-              )
-            )
-          ),
+              ))),
         ),
       ),
     );

@@ -12,7 +12,7 @@ class BikeRents extends StatelessWidget {
         appBar: AppBar(
             title: Text(getTranslated(context, 'bike_rents')),
             centerTitle: true,
-            backgroundColor: kSeconaryColor),
+            backgroundColor: kSecondaryColor),
         body: SingleChildScrollView(
             child: Column(
           children: [RentCard()],

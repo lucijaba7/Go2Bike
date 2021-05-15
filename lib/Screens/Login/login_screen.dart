@@ -8,7 +8,6 @@ import 'package:go2bike/localization/app_localization.dart';
 import 'package:go2bike/components/already_have_an_account_check.dart';
 
 import 'components/social_media.dart';
-import 'components/forgot_password.dart';
 import 'components/login_form.dart';
 
 import '../signup/signup_screen.dart';
@@ -25,8 +24,10 @@ class LoginScreen extends StatelessWidget {
         child: Container(
           width: double.infinity,
           height: size.height,
+          padding: EdgeInsets.all(size.width * 0.1),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Image.asset(
                 "assets/images/Logo.png",
@@ -46,20 +47,6 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(height: size.height * 0.05),
               LoginForm(),
-              Container(
-                alignment: Alignment.centerRight,
-                padding: EdgeInsets.symmetric(
-                  horizontal: 40,
-                ),
-                child: ForgotPassword(),
-              ),
-              RoundedButton(
-                text: getTranslated(context, 'signin'),
-                press: () {
-                  // can't import routeName
-                  Navigator.of(context).pushNamed('/main-page');
-                },
-              ),
               SizedBox(height: size.height * 0.02),
               SocialMedia(),
               SizedBox(height: size.height * 0.02),
@@ -70,7 +57,7 @@ class LoginScreen extends StatelessWidget {
                 },
               ),
               SizedBox(height: size.height * 0.02),
-              // LanguageFooter(),
+              LanguageFooter(),
             ],
           ),
         ),

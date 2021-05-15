@@ -18,7 +18,7 @@ class _AccountState extends State<Account> {
         appBar: AppBar(
             title: Text(getTranslated(context, 'my_account')),
             centerTitle: true,
-            backgroundColor: kSeconaryColor),
+            backgroundColor: kSecondaryColor),
         body: Column(
           children: [
             SizedBox(height: size.height * 0.08),

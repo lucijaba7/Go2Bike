@@ -27,7 +27,7 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
             login
                 ? getTranslated(context, 'register')
                 : getTranslated(context, 'signin'),
-            style: TextStyle(color: kSeconaryColor),
+            style: TextStyle(color: kSecondaryColor),
           ),
         ),
       ],

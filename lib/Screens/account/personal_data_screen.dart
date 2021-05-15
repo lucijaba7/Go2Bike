@@ -14,7 +14,7 @@ class PersonalData extends StatelessWidget {
         appBar: AppBar(
             title: Text(getTranslated(context, 'personal_data')),
             centerTitle: true,
-            backgroundColor: kSeconaryColor),
+            backgroundColor: kSecondaryColor),
         body: SingleChildScrollView(
             child: Center(
           child: Column(children: [

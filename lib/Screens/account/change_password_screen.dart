@@ -14,7 +14,7 @@ class ChangePassword extends StatelessWidget {
         appBar: AppBar(
             title: Text(getTranslated(context, 'pass_change')),
             centerTitle: true,
-            backgroundColor: kSeconaryColor),
+            backgroundColor: kSecondaryColor),
         body: SingleChildScrollView(
             child: Center(
           child: Column(children: [
@@ -22,12 +22,12 @@ class ChangePassword extends StatelessWidget {
             RoundedPasswordField(
               label: getTranslated(context, 'password'),
               hintText: getTranslated(context, 'password_description'),
-              onChanged: (value) {},
+              onSaved: (value) {},
             ),
             RoundedPasswordField(
               label: getTranslated(context, 'repeat_password'),
               hintText: getTranslated(context, 'repeat_password_description'),
-              onChanged: (value) {},
+              onSaved: (value) {},
             ),
             SizedBox(height: size.height * 0.02),
             RoundedButton(

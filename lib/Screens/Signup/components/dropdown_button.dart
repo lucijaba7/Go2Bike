@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import '../../../constraints.dart';
 
 class DropdownButtonWidget extends StatefulWidget {
-  DropdownButtonWidget({Key key}) : super(key: key);
+  final ValueChanged<String> onSaved;
+  final TextEditingController controller;
+  DropdownButtonWidget({Key key, this.onSaved, this.controller})
+      : super(key: key);
 
   @override
   _DropdownButtonWidgetState createState() => _DropdownButtonWidgetState();
 }
 
 class _DropdownButtonWidgetState extends State<DropdownButtonWidget> {
-  String dropdownValue = 'Pula'; 
+  String dropdownValue = 'Pula';
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -32,9 +35,9 @@ class _DropdownButtonWidgetState extends State<DropdownButtonWidget> {
       child: Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: ClipRRect(
-            borderRadius: BorderRadius.circular(29),
-            child: DropdownButtonHideUnderline(
-                child: DropdownButton<String>(
+          borderRadius: BorderRadius.circular(29),
+          child: DropdownButtonHideUnderline(
+            child: DropdownButtonFormField<String>(
               value: dropdownValue,
               icon: Icon(Icons.arrow_right),
               iconSize: 24,
@@ -54,7 +57,10 @@ class _DropdownButtonWidgetState extends State<DropdownButtonWidget> {
                   ),
                 );
               }).toList(),
-            ))),
+              onSaved: widget.onSaved,
+            ),
+          ),
+        ),
       ),
     );
   }
