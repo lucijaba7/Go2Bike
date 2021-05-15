@@ -55,6 +55,7 @@ class LoginScreen extends StatelessWidget {
               ),
               RoundedButton(
                 text: getTranslated(context, 'signin'),
+                val: 0.8,
                 press: () {
                   // can't import routeName
                   Navigator.of(context).pushNamed('/main-page');

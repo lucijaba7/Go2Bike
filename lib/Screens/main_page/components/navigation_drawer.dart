@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go2bike/localization/app_localization.dart';
 import 'package:go2bike/screens/account/account_screen.dart';
+import 'package:go2bike/screens/tariffs/tariffs_screen.dart';
 import '../../../constraints.dart';
 import '../../../custom_icons_icons.dart';
 
@@ -31,7 +32,7 @@ class NavigationDrawer extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(top: 12.0),
               width: size.width,
-              height: size.height * 0.08,
+              height: size.height * 0.09,
               decoration: BoxDecoration(color: kPrimaryLightColor),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,7 +76,8 @@ class NavigationDrawer extends StatelessWidget {
             icon: CustomIcons.credit_card),
         buildMenuItem(
             text: getTranslated(context, 'tariffs').toUpperCase(),
-            icon: CustomIcons.money),
+            icon: CustomIcons.money,
+            onClicked: () => selectedItem(context, 2)),
         buildMenuItem(
             text: getTranslated(context, 'malfunction_report').toUpperCase(),
             icon: CustomIcons.wrench),
@@ -114,6 +116,11 @@ class NavigationDrawer extends StatelessWidget {
     switch (index) {
       case 0:
         Navigator.of(context).pushNamed(Account.routeName);
+        break;
+      case 1:
+        break;
+      case 2:
+        Navigator.of(context).pushNamed(Tariffs.routeName);
         break;
     }
   }

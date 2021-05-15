@@ -21,6 +21,7 @@ class PersonalData extends StatelessWidget {
             PersonalDataForm(),
             RoundedButton(
               text: getTranslated(context, 'save'),
+              val: 0.4,
               press: () {},
             ),
             SizedBox(height: size.height * 0.02),

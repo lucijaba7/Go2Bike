@@ -12,6 +12,7 @@ import 'screens/account/account_screen.dart';
 import 'screens/account/bike_rents_screen.dart';
 import 'screens/account/change_password_screen.dart';
 import 'screens/account/personal_data_screen.dart';
+import 'screens/tariffs/tariffs_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -79,6 +80,7 @@ class _MyAppState extends State<MyApp> {
         BikeRents.routeName: (ctx) => BikeRents(),
         ChangePassword.routeName: (ctx) => ChangePassword(),
         PersonalData.routeName: (ctx) => PersonalData(),
+        Tariffs.routeName: (ctx) => Tariffs()
       },
     );
   }

@@ -37,12 +37,14 @@ class WelcomeScreen extends StatelessWidget {
                     SizedBox(height: size.height * 0.04),
                     RoundedButton(
                       text: getTranslated(context, 'signin'),
+                      val: 0.8,
                       press: () {
                         Navigator.of(context).pushNamed(LoginScreen.routeName);
                       },
                     ),
                     RoundedButton(
                       text: getTranslated(context, 'register'),
+                      val: 0.8,
                       color: Colors.white,
                       textColor: kPrimaryDarkColor,
                       press: () {
