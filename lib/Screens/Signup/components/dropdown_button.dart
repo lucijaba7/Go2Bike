@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go2bike/models/operator.dart';
+import 'package:go2bike/providers/public_operators.dart';
+import 'package:provider/provider.dart';
 import '../../../constraints.dart';
 
 class DropdownButtonWidget extends StatefulWidget {
-  final ValueChanged<String> onSaved;
+  final ValueChanged<Operator> onSaved;
   final TextEditingController controller;
   DropdownButtonWidget({Key key, this.onSaved, this.controller})
       : super(key: key);
@@ -12,13 +15,14 @@ class DropdownButtonWidget extends StatefulWidget {
 }
 
 class _DropdownButtonWidgetState extends State<DropdownButtonWidget> {
-  String dropdownValue = 'Pula';
   @override
   Widget build(BuildContext context) {
+    final publicOperators = Provider.of<PublicOperators>(context);
+    Operator dropdownValue = publicOperators.operators[0];
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+      margin: EdgeInsets.symmetric(vertical: 15.0),
+      padding: EdgeInsets.symmetric(horizontal: 15.0),
       width: size.width * 0.8,
       decoration: BoxDecoration(
           color: kPrimaryLightColor,
@@ -29,37 +33,38 @@ class _DropdownButtonWidgetState extends State<DropdownButtonWidget> {
               color: Colors.grey.withOpacity(0.5),
               spreadRadius: 0.0,
               blurRadius: 5.0,
-              offset: Offset(0.0, 0.75), // changes position of shadow
+              offset: Offset(0.0, 0.75),
             ),
           ]),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 8.0),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(29),
-          child: DropdownButtonHideUnderline(
-            child: DropdownButtonFormField<String>(
-              value: dropdownValue,
-              icon: Icon(Icons.arrow_right),
-              iconSize: 24,
-              elevation: 16,
-              onChanged: (String newValue) {
-                setState(() {
-                  dropdownValue = newValue;
-                });
-              },
-              items: ['Pula', 'Rijeka', 'Karlovac']
-                  .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(
-                    value,
-                    style: TextStyle(color: kPrimaryDarkColor),
-                  ),
-                );
-              }).toList(),
-              onSaved: widget.onSaved,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(29),
+        // child: DropdownButtonHideUnderline(
+        child: DropdownButtonFormField<Operator>(
+          decoration: InputDecoration(
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: kPrimaryLightColor),
             ),
           ),
+          value: dropdownValue,
+          icon: Icon(Icons.arrow_right),
+          iconSize: 24,
+          elevation: 16,
+          onChanged: (Operator newValue) {
+            setState(() {
+              dropdownValue = newValue;
+            });
+          },
+          items: publicOperators.operators
+              .map<DropdownMenuItem<Operator>>((Operator value) {
+            return DropdownMenuItem<Operator>(
+              value: value,
+              child: Text(
+                value.name,
+                style: TextStyle(color: kPrimaryDarkColor),
+              ),
+            );
+          }).toList(),
+          onSaved: widget.onSaved,
         ),
       ),
     );

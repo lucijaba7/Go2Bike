@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:footer/footer.dart';
-import 'package:footer/footer_view.dart';
 import 'package:go2bike/screens/signup/signup_screen.dart';
 import 'package:go2bike/screens/login/login_screen.dart';
-import 'package:go2bike/components/language_footer.dart';
-import 'package:go2bike/components/rounded_button.dart';
+import 'package:go2bike/widgets/language_footer.dart';
+import 'package:go2bike/widgets/rounded_button.dart';
 import 'package:go2bike/constraints.dart';
 import 'package:go2bike/localization/app_localization.dart';
 
@@ -33,7 +31,8 @@ class WelcomeScreen extends StatelessWidget {
                   text: getTranslated(context, 'signin'),
                   val: 0.8,
                   press: () {
-                    Navigator.of(context).pushNamed(LoginScreen.routeName);
+                    Navigator.of(context)
+                        .pushReplacementNamed(LoginScreen.routeName);
                   },
                 ),
                 RoundedButton(
@@ -42,7 +41,8 @@ class WelcomeScreen extends StatelessWidget {
                   color: Colors.white,
                   textColor: kPrimaryDarkColor,
                   press: () {
-                    Navigator.of(context).pushNamed(SignUpScreen.routeName);
+                    Navigator.of(context)
+                        .pushReplacementNamed(SignUpScreen.routeName);
                   },
                 ),
               ],

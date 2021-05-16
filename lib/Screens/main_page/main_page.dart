@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
-import 'package:go2bike/components/rounded_button.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/user_profile.dart';
+import 'package:go2bike/widgets/rounded_button.dart';
 import 'package:go2bike/flutter_maps/show_map.dart';
 import 'package:go2bike/localization/app_localization.dart';
 import 'package:go2bike/screens/main_page/components/navigation_drawer.dart';
 import '../../constraints.dart';
+import '../../widgets/loader.dart';
 
 class MainPage extends StatefulWidget {
-  static const routeName = '/main-page';
+  static const routeName = '/';
   @override
   _MainPageState createState() => _MainPageState();
 }
@@ -17,19 +21,39 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   String qrCode = 'Unknown';
 
+  var _isInit = true;
+  var _isLoading = false;
+
+  void didChangeDependencies() {
+    if (_isInit) {
+      setState(() {
+        _isLoading = true;
+      });
+      Provider.of<UserProfile>(context).fetchUserProfile().then((_) {
+        setState(() {
+          _isLoading = false;
+        });
+      });
+    }
+    _isInit = false;
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
-    //Size size = MediaQuery.of(context).size;
+    print('main page');
+    Size size = MediaQuery.of(context).size;
     GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
     return Scaffold(
-        key: _scaffoldKey,
-        drawer: NavigationDrawer(),
-        body: Stack(children: <Widget>[
-          //ShowGoogleMap(),
+      key: _scaffoldKey,
+      drawer: NavigationDrawer(),
+      body: Stack(
+        children: <Widget>[
+          ShowGoogleMap(),
           Positioned(
-              top: 70,
-              right: 35,
-              left: 35,
+              top: size.height * 0.05,
+              right: 30.0,
+              left: 30.0,
               child: Container(
                 height: 50,
                 decoration: BoxDecoration(
@@ -43,23 +67,29 @@ class _MainPageState extends State<MainPage> {
                         offset: Offset(0.0, 0.75),
                       )
                     ]),
-                child:
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Material(
-                    type: MaterialType.transparency,
-                    child: IconButton(
-                      //splashColor: Colors.transparent,
-                      icon: Icon(Icons.menu),
-                      onPressed: () {
-                        print("Otvaraaam");
-                        _scaffoldKey.currentState.openDrawer();
-                      },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Material(
+                      type: MaterialType.transparency,
+                      child: IconButton(
+                        //splashColor: Colors.transparent,
+                        icon: Icon(
+                          Icons.menu,
+                          color: kPrimaryDarkColor,
+                        ),
+                        onPressed: () {
+                          print("Otvaraaam");
+                          _scaffoldKey.currentState.openDrawer();
+                        },
+                      ),
                     ),
-                  ),
-                  Image.asset(
-                    "assets/images/Logo.png",
-                  ),
-                ]),
+                    Image.asset(
+                      "assets/images/Logo.png",
+                    ),
+                    SizedBox(width: 24.0)
+                  ],
+                ),
               )),
           Positioned(
             left: 80,
@@ -73,7 +103,9 @@ class _MainPageState extends State<MainPage> {
                   scanQRCode();
                 }),
           )
-        ]));
+        ],
+      ),
+    );
   }
 
   Future<void> scanQRCode() async {

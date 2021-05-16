@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:footer/footer.dart';
 import 'package:go2bike/constraints.dart';
 import 'package:go2bike/main.dart';
 
