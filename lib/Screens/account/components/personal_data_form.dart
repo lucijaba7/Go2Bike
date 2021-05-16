@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/components/rounded_input_field.dart';
+import 'package:go2bike/widgets/rounded_input_field.dart';
 import 'package:go2bike/localization/app_localization.dart';
 import 'package:go2bike/screens/account/components/dropdown_button.dart';
 

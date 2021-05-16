@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:go2bike/components/rounded_button.dart';
+import 'package:go2bike/widgets/rounded_button.dart';
 import 'package:go2bike/localization/app_localization.dart';
 import '../../../constraints.dart';
 

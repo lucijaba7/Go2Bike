@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go2bike/screens/signup/components/dropdown_button.dart';
-import 'package:go2bike/components/rounded_button.dart';
+import 'package:go2bike/widgets/rounded_button.dart';
 import 'package:go2bike/screens/login/login_screen.dart';
-import 'package:go2bike/components/already_have_an_account_check.dart';
-import 'package:go2bike/components/language_footer.dart';
+import 'package:go2bike/widgets/already_have_an_account_check.dart';
+import 'package:go2bike/widgets/language_footer.dart';
 import 'package:go2bike/localization/app_localization.dart';
 import 'package:go2bike/screens/signup/components/signup_form.dart';
 
@@ -38,7 +38,7 @@ class SignUpScreen extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
-              SizedBox(height: size.height * 0.05),
+              SizedBox(height: size.height * 0.04),
               SignupForm(),
               SizedBox(height: size.height * 0.02),
               AlreadyHaveAnAccountCheck(

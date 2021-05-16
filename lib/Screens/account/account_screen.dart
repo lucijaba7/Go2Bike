@@ -21,33 +21,34 @@ class _AccountState extends State<Account> {
           ),
           centerTitle: true,
           backgroundColor: kSecondaryColor),
-      body: Column(
-        children: [
-          SizedBox(height: size.height * 0.08),
-          Center(
-            child: Column(
-              children: [
-                Text(
-                  "IVANA IVIĆ",
-                  style: TextStyle(
-                    fontFamily: "JosefinSansBold",
-                    fontSize: 34,
-                    color: kPrimaryDarkColor,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: size.height * 0.08),
+            Center(
+              child: Column(
+                children: [
+                  Text(
+                    "IVANA IVIĆ",
+                    style: TextStyle(
+                      fontFamily: "JosefinSansBold",
+                      fontSize: 34,
+                      color: kPrimaryDarkColor,
+                    ),
                   ),
-                ),
-                Text(
-                  "ivana.ivic@gmail.com",
-                  style: TextStyle(
-                    fontSize: 17,
+                  Text(
+                    "ivana.ivic@gmail.com",
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          SizedBox(height: size.height * 0.06),
-          AccountMenu()
-        ],
-      ),
-    );
+            SizedBox(height: size.height * 0.06),
+            AccountMenu()
+          ],
+        ),
+    ));
   }
 }

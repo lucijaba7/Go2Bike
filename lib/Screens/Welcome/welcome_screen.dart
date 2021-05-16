@@ -3,8 +3,8 @@ import 'package:footer/footer.dart';
 import 'package:footer/footer_view.dart';
 import 'package:go2bike/screens/signup/signup_screen.dart';
 import 'package:go2bike/screens/login/login_screen.dart';
-import 'package:go2bike/components/language_footer.dart';
-import 'package:go2bike/components/rounded_button.dart';
+import 'package:go2bike/widgets/language_footer.dart';
+import 'package:go2bike/widgets/rounded_button.dart';
 import 'package:go2bike/constraints.dart';
 import 'package:go2bike/localization/app_localization.dart';
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
-import 'package:go2bike/components/rounded_button.dart';
+import 'package:go2bike/widgets/rounded_button.dart';
 import 'package:go2bike/flutter_maps/show_map.dart';
 import 'package:go2bike/localization/app_localization.dart';
 import 'package:go2bike/screens/main_page/components/navigation_drawer.dart';
@@ -25,7 +25,7 @@ class _MainPageState extends State<MainPage> {
         key: _scaffoldKey,
         drawer: NavigationDrawer(),
         body: Stack(children: <Widget>[
-          //ShowGoogleMap(),
+          ShowGoogleMap(),
           Positioned(
               top: 70,
               right: 35,

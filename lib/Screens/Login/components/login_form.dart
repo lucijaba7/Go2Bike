@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/components/rounded_button.dart';
-import 'package:go2bike/components/rounded_input_field.dart';
-import 'package:go2bike/components/rounded_password_field.dart';
+import 'package:go2bike/widgets/rounded_button.dart';
+import 'package:go2bike/widgets/rounded_input_field.dart';
+import 'package:go2bike/widgets/rounded_password_field.dart';
 import 'package:go2bike/localization/app_localization.dart';
 import 'package:go2bike/models/http_exception.dart';
 import 'package:go2bike/providers/auth.dart';
@@ -78,6 +78,7 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Form(
       key: _loginKey,
       child: Column(
@@ -109,6 +110,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
             ),
           ),
+          SizedBox(height: size.height * 0.02),
           if (_isLoading)
             CircularProgressIndicator()
           else

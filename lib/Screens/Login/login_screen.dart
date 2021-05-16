@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:go2bike/components/language_footer.dart';
-import 'package:go2bike/components/rounded_button.dart';
-import 'package:go2bike/components/rounded_input_field.dart';
-import 'package:go2bike/components/rounded_password_field.dart';
+import 'package:go2bike/widgets/language_footer.dart';
+import 'package:go2bike/widgets/rounded_button.dart';
+import 'package:go2bike/widgets/rounded_input_field.dart';
+import 'package:go2bike/widgets/rounded_password_field.dart';
 import 'package:go2bike/localization/app_localization.dart';
-import 'package:go2bike/components/already_have_an_account_check.dart';
+import 'package:go2bike/widgets/already_have_an_account_check.dart';
 
 import 'components/social_media.dart';
 import 'components/login_form.dart';
@@ -44,11 +44,11 @@ class LoginScreen extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
-              SizedBox(height: size.height * 0.05),
+              SizedBox(height: size.height * 0.04),
               LoginForm(),
-              SizedBox(height: size.height * 0.02),
+              SizedBox(height: size.height * 0.04),
               SocialMedia(),
-              SizedBox(height: size.height * 0.02),
+              SizedBox(height: size.height * 0.03),
               AlreadyHaveAnAccountCheck(
                 press: () {
                   // can't import routeName

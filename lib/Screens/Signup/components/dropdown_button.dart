@@ -17,7 +17,7 @@ class _DropdownButtonWidgetState extends State<DropdownButtonWidget> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: EdgeInsets.symmetric(vertical: 25),
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
       width: size.width * 0.8,
       decoration: BoxDecoration(

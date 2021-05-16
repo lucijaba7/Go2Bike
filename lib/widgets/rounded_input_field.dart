@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/components/text_field_container.dart';
+import 'package:go2bike/widgets/text_field_container.dart';
 import 'package:go2bike/constraints.dart';
 import 'package:go2bike/localization/app_localization.dart';
 
@@ -27,7 +27,7 @@ class RoundedInputField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
+          padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
           child: Text(
             label,
             style: TextStyle(
