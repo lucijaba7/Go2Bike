@@ -39,11 +39,11 @@ class LoginScreen extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
-              SizedBox(height: size.height * 0.05),
+              SizedBox(height: size.height * 0.04),
               LoginForm(),
-              SizedBox(height: size.height * 0.02),
+              SizedBox(height: size.height * 0.04),
               SocialMedia(),
-              SizedBox(height: size.height * 0.02),
+              SizedBox(height: size.height * 0.03),
               AlreadyHaveAnAccountCheck(
                 press: () {
                   Navigator.of(context)

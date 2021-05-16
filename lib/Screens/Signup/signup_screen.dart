@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:go2bike/screens/login/login_screen.dart';
 import 'package:go2bike/widgets/already_have_an_account_check.dart';
 import 'package:go2bike/widgets/language_footer.dart';
@@ -36,7 +37,7 @@ class SignUpScreen extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
-              SizedBox(height: size.height * 0.05),
+              SizedBox(height: size.height * 0.04),
               SignupForm(),
               SizedBox(height: size.height * 0.02),
               AlreadyHaveAnAccountCheck(

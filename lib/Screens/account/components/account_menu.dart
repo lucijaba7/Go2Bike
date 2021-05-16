@@ -5,6 +5,7 @@ import 'package:go2bike/screens/account/personal_data_screen.dart';
 import '../../../constraints.dart';
 import '../../../custom_icons_icons.dart';
 import '../change_password_screen.dart';
+import '../payments_screen.dart';
 
 class AccountMenu extends StatelessWidget {
   @override
@@ -32,7 +33,11 @@ class AccountMenu extends StatelessWidget {
           ),
           Divider(thickness: 1.3),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => Payments(),
+              ));
+            },
             child: AccountMenuItem(text: getTranslated(context, 'payments')),
           ),
           Divider(thickness: 1.3),

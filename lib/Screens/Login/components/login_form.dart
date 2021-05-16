@@ -72,6 +72,7 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Form(
       key: _loginKey,
       child: Column(
@@ -103,6 +104,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
             ),
           ),
+          SizedBox(height: size.height * 0.02),
           _isLoading
               ? Loader()
               : RoundedButton(
