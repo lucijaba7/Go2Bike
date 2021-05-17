@@ -58,8 +58,5 @@
     "month": "mth",
     "buy_code": "Buy code",
     "additional_info": "Additional information",
-    "info_text": "Overrun: 10.00 kn / hour - overrun up to 5 min is tolerated. \n\nIf the user has the code for a period longer than 2 hours, he can use another bicycle or the same bicycle on the same day after 5 minutes.",
-    "date": "date",
-    "payment_method": "payment method",
-    "amount": "amount"
+    "info_text": "Overrun: 10.00 kn / hour - overrun up to 5 min is tolerated. \n\nIf the user has the code for a period longer than 2 hours, he can use another bicycle or the same bicycle on the same day after 5 minutes."
 }
