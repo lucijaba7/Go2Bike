@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/screens/main_page/main_page.dart';
-import 'package:go2bike/widgets/rounded_button.dart';
-import 'package:go2bike/widgets/rounded_input_field.dart';
-import 'package:go2bike/widgets/rounded_password_field.dart';
-import 'package:go2bike/widgets/loader.dart';
-import 'package:go2bike/localization/app_localization.dart';
-import 'package:go2bike/providers/auth.dart';
-import '../../../constraints.dart';
 import 'package:provider/provider.dart';
+import '../../../screens/main_page/main_page.dart';
+import '../../../widgets/rounded_button.dart';
+import '../../../widgets/rounded_input_field.dart';
+import '../../../widgets/rounded_password_field.dart';
+import '../../../widgets/loader.dart';
+import '../../../localization/app_localization.dart';
+import '../../../providers/auth.dart';
+import '../../../constraints.dart';
 
 class LoginForm extends StatefulWidget {
   @override

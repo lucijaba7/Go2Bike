@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/constraints.dart';
-import 'package:go2bike/localization/app_localization.dart';
+import '../constraints.dart';
+import '../localization/app_localization.dart';
 
 class RoundedInputField extends StatelessWidget {
   final bool email;

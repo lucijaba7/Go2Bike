@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/localization/app_localization.dart';
+import '../../../localization/app_localization.dart';
 
 class SocialMedia extends StatelessWidget {
   @override

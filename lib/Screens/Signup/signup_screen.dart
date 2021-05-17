@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
-import 'package:go2bike/screens/login/login_screen.dart';
-import 'package:go2bike/widgets/already_have_an_account_check.dart';
-import 'package:go2bike/widgets/language_footer.dart';
-import 'package:go2bike/localization/app_localization.dart';
-import 'package:go2bike/screens/signup/components/signup_form.dart';
+import '../../screens/login/login_screen.dart';
+import '../../widgets/already_have_an_account_check.dart';
+import '../../widgets/language_footer.dart';
+import '../../localization/app_localization.dart';
+import '../../screens/signup/components/signup_form.dart';
 
 class SignUpScreen extends StatelessWidget {
   static const routeName = '/sign-up';

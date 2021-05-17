@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/localization/app_localization.dart';
-import 'package:go2bike/screens/account/components/rent_card.dart';
+import '../../localization/app_localization.dart';
+import '../../screens/account/components/rent_card.dart';
 import '../../constraints.dart';
 
 class BikeRents extends StatelessWidget {

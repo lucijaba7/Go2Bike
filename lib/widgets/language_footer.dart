@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/constraints.dart';
-import 'package:go2bike/main.dart';
+import '../constraints.dart';
+import '../main.dart';
 
 class LanguageFooter extends StatefulWidget {
   final Widget child;

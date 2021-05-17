@@ -5,12 +5,11 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/user_profile.dart';
-import 'package:go2bike/widgets/rounded_button.dart';
-import 'package:go2bike/flutter_maps/show_map.dart';
-import 'package:go2bike/localization/app_localization.dart';
-import 'package:go2bike/screens/main_page/components/navigation_drawer.dart';
+import '../../widgets/rounded_button.dart';
+import '../../flutter_maps/show_map.dart';
+import '../../localization/app_localization.dart';
+import '../../screens/main_page/components/navigation_drawer.dart';
 import '../../constraints.dart';
-import '../../widgets/loader.dart';
 
 class MainPage extends StatefulWidget {
   static const routeName = '/';

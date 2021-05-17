@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/constraints.dart';
+import '../constraints.dart';
 
 class Loader extends StatelessWidget {
   @override

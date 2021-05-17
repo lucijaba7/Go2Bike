@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/widgets/rounded_button.dart';
-import 'package:go2bike/widgets/rounded_password_field.dart';
-import 'package:go2bike/localization/app_localization.dart';
+import '../../widgets/rounded_button.dart';
+import '../../widgets/rounded_password_field.dart';
+import '../../localization/app_localization.dart';
 import '../../constraints.dart';
 
 class ChangePassword extends StatelessWidget {
@@ -16,7 +16,10 @@ class ChangePassword extends StatelessWidget {
             centerTitle: true,
             backgroundColor: kSecondaryColor),
         body: SingleChildScrollView(
-            child: Center(
+            child: Container(
+          width: double.infinity,
+          padding:
+              EdgeInsets.only(left: size.width * 0.1, right: size.width * 0.1),
           child: Column(children: [
             SizedBox(height: size.height * 0.05),
             RoundedPasswordField(

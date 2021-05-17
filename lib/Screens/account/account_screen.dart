@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/localization/app_localization.dart';
 import 'package:provider/provider.dart';
-import '../../constraints.dart';
 import 'components/account_menu.dart';
+import '../../localization/app_localization.dart';
+import '../../constraints.dart';
 import '../../providers/user_profile.dart';
 
 class Account extends StatefulWidget {

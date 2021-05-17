@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/localization/app_localization.dart';
-import 'package:go2bike/screens/account/account_screen.dart';
-import 'package:go2bike/screens/tariffs/tariffs_screen.dart';
 import 'package:provider/provider.dart';
+import '../../../localization/app_localization.dart';
+import '../../../screens/account/account_screen.dart';
+import '../../../screens/tariffs/tariffs_screen.dart';
 import '../../../providers/user_profile.dart';
 import '../../../providers/auth.dart';
 import '../../../constraints.dart';

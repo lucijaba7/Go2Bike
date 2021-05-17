@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/models/operator.dart';
-import 'package:go2bike/providers/public_operators.dart';
 import 'package:provider/provider.dart';
+import '../../../models/operator.dart';
+import '../../../providers/public_operators.dart';
 import '../../../constraints.dart';
 
 class DropdownButtonWidget extends StatefulWidget {

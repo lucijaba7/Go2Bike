@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/widgets/rounded_input_field.dart';
-import 'package:go2bike/localization/app_localization.dart';
-import 'package:go2bike/screens/account/components/dropdown_button.dart';
 import 'package:provider/provider.dart';
+import '../../../widgets/rounded_input_field.dart';
+import '../../../localization/app_localization.dart';
+import '../../../screens/account/components/dropdown_button.dart';
 import '../../../providers/user_profile.dart';
 
 class PersonalDataForm extends StatefulWidget {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/screens/signup/signup_screen.dart';
-import 'package:go2bike/screens/login/login_screen.dart';
-import 'package:go2bike/widgets/language_footer.dart';
-import 'package:go2bike/widgets/rounded_button.dart';
-import 'package:go2bike/constraints.dart';
-import 'package:go2bike/localization/app_localization.dart';
+import '../../screens/signup/signup_screen.dart';
+import '../../screens/login/login_screen.dart';
+import '../../widgets/language_footer.dart';
+import '../../widgets/rounded_button.dart';
+import '../../constraints.dart';
+import '../../localization/app_localization.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static const routeName = '/welcome-screen';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/widgets/rounded_button.dart';
-import 'package:go2bike/localization/app_localization.dart';
-import 'package:go2bike/screens/account/components/personal_data_form.dart';
+import '../../widgets/rounded_button.dart';
+import '../../localization/app_localization.dart';
+import '../../screens/account/components/personal_data_form.dart';
 import '../../constraints.dart';
 
 class PersonalData extends StatelessWidget {
