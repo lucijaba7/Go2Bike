@@ -35,11 +35,11 @@ class RoundedInputField extends StatelessWidget {
           ),
         ),
         TextFormField(
-          //onChanged: onChanged,
+          controller: controller,
           decoration: InputDecoration(
             hintText: hintText,
             prefixIcon: Icon(
-              email ? Icons.mail : Icons.person,
+              icon,
               color: kPrimaryDarkColor,
             ),
             contentPadding: EdgeInsets.all(15.0),

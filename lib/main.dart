@@ -58,12 +58,10 @@ class _MyAppState extends State<MyApp> {
       ],
       child: Consumer<Auth>(
         builder: (ctx, auth, _) {
-          print(auth.isAuth);
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Go2Bike',
             theme: ThemeData(
-              //primaryColor: kPrimaryColor,
               scaffoldBackgroundColor: kPrimaryLightColor,
               fontFamily: 'JosefinSans',
               textTheme: TextTheme(

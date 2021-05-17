@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go2bike/localization/app_localization.dart';
+import 'package:provider/provider.dart';
 import '../../constraints.dart';
 import 'components/account_menu.dart';
+import '../../providers/user_profile.dart';
 
 class Account extends StatefulWidget {
   static const routeName = '/account';
@@ -15,40 +17,48 @@ class _AccountState extends State<Account> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-          title: Text(
-            getTranslated(context, 'my_account'),
-          ),
-          centerTitle: true,
-          backgroundColor: kSecondaryColor),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: size.height * 0.08),
-            Center(
-              child: Column(
-                children: [
-                  Text(
-                    "IVANA IVIĆ",
-                    style: TextStyle(
-                      fontFamily: "JosefinSansBold",
-                      fontSize: 34,
-                      color: kPrimaryDarkColor,
-                    ),
-                  ),
-                  Text(
-                    "ivana.ivic@gmail.com",
-                    style: TextStyle(
-                      fontSize: 17,
-                    ),
-                  ),
-                ],
-              ),
+        appBar: AppBar(
+            title: Text(
+              getTranslated(context, 'my_account'),
             ),
-            SizedBox(height: size.height * 0.06),
-            AccountMenu()
-          ],
-        ),
-    ));
+            centerTitle: true,
+            backgroundColor: kSecondaryColor),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: size.height * 0.08),
+              Center(
+                child: Consumer<UserProfile>(
+                  builder: (ctx, userData, _) => Column(
+                    children: [
+                      Text(
+                        userData.user.name == null
+                            ? getTranslated(context, 'welcome_user')
+                                .toUpperCase()
+                            : (userData.user.name +
+                                    ' ' +
+                                    userData.user.lastname)
+                                .toUpperCase(),
+                        style: TextStyle(
+                          fontFamily: "JosefinSansBold",
+                          fontSize: 34,
+                          color: kPrimaryDarkColor,
+                        ),
+                      ),
+                      Text(
+                        userData.user.email,
+                        style: TextStyle(
+                          fontSize: 17,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: size.height * 0.06),
+              AccountMenu()
+            ],
+          ),
+        ));
   }
 }

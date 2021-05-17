@@ -23,7 +23,6 @@ class UserProfile with ChangeNotifier {
   }
 
   Future<void> fetchUserProfile() async {
-    print(authToken);
     final url = Uri.parse(
         'https://go2bikeapitest.azurewebsites.net/accounts/UserPersonalData?username=' +
             username);
@@ -33,10 +32,9 @@ class UserProfile with ChangeNotifier {
           .get(url, headers: {'Authorization': 'Bearer ' + authToken});
       final responseData = json.decode(response.body);
 
-      print(responseData['Id']);
-
-      bool isConfirmed =
-          responseData['EmailConfirmed'] == 'true' ? true : false;
+      final postalCode = responseData['PostalCode'] != null
+          ? int.parse(responseData['PostalCode'])
+          : 0;
 
       final User newUser = User(
         responseData['Id'],
@@ -44,20 +42,18 @@ class UserProfile with ChangeNotifier {
         responseData['Name'],
         responseData['LastName'],
         responseData['Email'],
-        false,
+        responseData['EmailConfirmed'],
         responseData['PhoneNumber'],
         responseData['VatNum'],
         responseData['Address'],
         responseData['City'],
-        52100,
+        postalCode,
         responseData['CountryId'],
         responseData['Country'],
         responseData['Info'],
       );
 
       _user = newUser;
-
-      print(_user.name);
 
       notifyListeners();
       return true;

@@ -19,16 +19,28 @@ class NavigationDrawer extends StatelessWidget {
         Column(
           children: [
             Consumer<UserProfile>(
-              builder: (ctx, userData, _) => Padding(
-                padding: const EdgeInsets.only(left: 0.0, top: 0.0),
-                child: Text(
-                  'IVANA',
-                  style: TextStyle(
-                    fontFamily: "JosefinSansBold",
-                    fontSize: 34,
-                    color: kPrimaryDarkColor,
+              builder: (ctx, userData, _) => Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25.0, top: 15.0),
+                    child: FittedBox(
+                      child: Text(
+                        userData.user.name == null
+                            ? getTranslated(context, 'welcome_user')
+                                .toUpperCase()
+                            : (userData.user.name +
+                                    ' ' +
+                                    userData.user.lastname)
+                                .toUpperCase(),
+                        style: TextStyle(
+                          fontFamily: "JosefinSansBold",
+                          fontSize: 34,
+                          color: kPrimaryDarkColor,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
             Container(

@@ -61,5 +61,6 @@
     "info_text": "Prekoračenje: 10,00 kn /sat - tolerira se prekoračenje do 5 min. \n\nUkoliko korisnik posjeduje kod na period duži od 2 h može isti dan koristiti drugu biciklu ili istu biciklu nakon prolaska 5 minuta.",
     "date": "datum",
     "payment_method": "način plaćanja",
-    "amount": "iznos"
+    "amount": "iznos",
+    "welcome_user": "dobrodošli!"
 }

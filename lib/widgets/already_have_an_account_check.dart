@@ -21,6 +21,7 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
               ? getTranslated(context, 'no_account')
               : getTranslated(context, 'have_account'),
         ),
+        Text(' '),
         GestureDetector(
           onTap: press,
           child: Text(

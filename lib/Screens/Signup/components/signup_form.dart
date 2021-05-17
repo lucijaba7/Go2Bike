@@ -79,7 +79,7 @@ class _SignupFormState extends State<SignupForm> {
           ),
           RoundedInputField(
             label: getTranslated(context, 'email'),
-            email: true,
+            icon: Icons.email,
             hintText: getTranslated(context, 'email_description'),
             onSaved: (value) {
               _authData['email'] = value;

@@ -9,14 +9,13 @@ class DropdownButtonWidget extends StatefulWidget {
 }
 
 class _DropdownButtonWidgetState extends State<DropdownButtonWidget> {
-  String dropdownValue = 'Hrvatska'; 
+  String dropdownValue = 'Hrvatska';
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-      width: size.width * 0.8,
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      width: double.infinity,
       decoration: BoxDecoration(
           color: kPrimaryLightColor,
           // neki shadow na botun

@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
 
 class Auth with ChangeNotifier {
   String _token;
@@ -97,16 +97,13 @@ class Auth with ChangeNotifier {
       );
 
       final responseData = json.decode(response.body);
-      print(responseData);
+
       // _token = responseData['access_token'];
       // _expiryDate = DateTime.now().add(
       //   Duration(
       //     seconds: responseData['expires_in'],
       //   ),
       // );
-      // print(responseData);
-      // notifyListeners();
-
       _autoLogout();
       notifyListeners();
 

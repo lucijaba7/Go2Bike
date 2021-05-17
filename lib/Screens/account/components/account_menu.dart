@@ -15,13 +15,13 @@ class AccountMenu extends StatelessWidget {
         children: [
           Divider(thickness: 1.3),
           InkWell(
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => PersonalData(),
-              ));
-            },
-            child: AccountMenuItem(text: getTranslated(context, 'personal_data'))
-          ), 
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => PersonalData(),
+                ));
+              },
+              child: AccountMenuItem(
+                  text: getTranslated(context, 'personal_data'))),
           Divider(thickness: 1.3),
           InkWell(
             onTap: () {
@@ -57,9 +57,11 @@ class AccountMenu extends StatelessWidget {
           Divider(thickness: 1.3),
           InkWell(
             onTap: () {},
-            child: AccountMenuItem(text: getTranslated(context, 'lang_selection')),
+            child:
+                AccountMenuItem(text: getTranslated(context, 'lang_selection')),
           )
-      ],),
+        ],
+      ),
     );
   }
 }
@@ -72,25 +74,24 @@ class AccountMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 30, top: 25, bottom: 25),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            children: [Text("$text",
-              style: TextStyle(
-                fontFamily: "JosefinSansBold",
-                fontSize: 18,
-                color: kPrimaryDarkColor,
-              ),),
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Column(children: [
+          Text(
+            "$text",
+            style: TextStyle(
+              fontFamily: "JosefinSansBold",
+              fontSize: 18,
+              color: kPrimaryDarkColor,
+            ),
+          ),
+        ]),
+        Padding(
+          padding: const EdgeInsets.only(right: 50.0),
+          child: Row(children: [
+            Icon(CustomIcons.right_arrow, color: kPrimaryDarkColor, size: 14)
           ]),
-          Padding(
-            padding: const EdgeInsets.only(right: 50.0),
-            child: Row(children: [Icon(CustomIcons.right_arrow, color: kPrimaryDarkColor, size: 14)]),
-          )]
-        ),
-      );
+        )
+      ]),
+    );
   }
 }
-
-
-          

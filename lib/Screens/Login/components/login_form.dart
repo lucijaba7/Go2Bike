@@ -96,7 +96,7 @@ class _LoginFormState extends State<LoginForm> {
             child: GestureDetector(
               onTap: () {},
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(top: 15.0),
                 child: Text(
                   getTranslated(context, 'forgot_password'),
                   style: TextStyle(color: kSecondaryColor),

@@ -41,7 +41,6 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    print('main page');
     Size size = MediaQuery.of(context).size;
     GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
     return Scaffold(
@@ -79,7 +78,6 @@ class _MainPageState extends State<MainPage> {
                           color: kPrimaryDarkColor,
                         ),
                         onPressed: () {
-                          print("Otvaraaam");
                           _scaffoldKey.currentState.openDrawer();
                         },
                       ),
@@ -116,7 +114,6 @@ class _MainPageState extends State<MainPage> {
           //getTranslated(context, 'cancel'),
           false, //flash true/false
           ScanMode.QR);
-      print(qrCode);
     } on PlatformException {
       qrCode = 'Failed to get platform version.';
     }

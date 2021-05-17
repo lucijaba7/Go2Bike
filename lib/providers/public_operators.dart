@@ -1,13 +1,11 @@
-import 'package:flutter/material.dart';
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:go2bike/models/operator.dart';
+import '../models/operator.dart';
 import 'package:http/http.dart' as http;
 
 class PublicOperators with ChangeNotifier {
   List<Operator> _operators;
-
-  // PublicOperators(this._operators);
 
   List<Operator> get operators {
     return [..._operators];

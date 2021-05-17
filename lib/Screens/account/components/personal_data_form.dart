@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go2bike/widgets/rounded_input_field.dart';
 import 'package:go2bike/localization/app_localization.dart';
 import 'package:go2bike/screens/account/components/dropdown_button.dart';
+import 'package:provider/provider.dart';
+import '../../../providers/user_profile.dart';
 
 class PersonalDataForm extends StatefulWidget {
   @override
@@ -12,58 +14,68 @@ class _PersonalDataFormState extends State<PersonalDataForm> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Column(
-      children: [
-        SizedBox(height: size.height * 0.05),
-        RoundedInputField(
-          label: getTranslated(context, 'first_name'),
-          hintText: "Ivana",
-          onSaved: (value) {},
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.only(left: size.width * 0.1, right: size.width * 0.1),
+      child: Consumer<UserProfile>(
+        builder: (ctx, userData, _) => Column(
+          children: [
+            SizedBox(height: size.height * 0.05),
+            RoundedInputField(
+              label: getTranslated(context, 'first_name'),
+              controller: TextEditingController(text: userData.user.name),
+              onSaved: (value) {},
+            ),
+            RoundedInputField(
+              label: getTranslated(context, 'last_name'),
+              controller: TextEditingController(text: userData.user.lastname),
+              onSaved: (value) {},
+            ),
+            RoundedInputField(
+              label: getTranslated(context, 'email'),
+              controller: TextEditingController(text: userData.user.email),
+              icon: Icons.mail,
+              hintText: "ivana.ivic@gmail.com",
+              onSaved: (value) {},
+            ),
+            RoundedInputField(
+              label: getTranslated(context, 'oib'),
+              controller: TextEditingController(text: userData.user.vatNum),
+              icon: Icons.lock,
+              onSaved: (value) {},
+            ),
+            RoundedInputField(
+              label: getTranslated(context, 'phone_number'),
+              controller:
+                  TextEditingController(text: userData.user.phoneNumber),
+              icon: Icons.phone,
+              onSaved: (value) {},
+            ),
+            RoundedInputField(
+              label: getTranslated(context, 'address'),
+              controller: TextEditingController(text: userData.user.address),
+              icon: Icons.house,
+              onSaved: (value) {},
+            ),
+            RoundedInputField(
+              label: getTranslated(context, 'city'),
+              controller: TextEditingController(text: userData.user.city),
+              icon: Icons.star,
+              onSaved: (value) {},
+            ),
+            RoundedInputField(
+              label: getTranslated(context, 'postal_code'),
+              controller: TextEditingController(
+                text: userData.user.postalCode.toString(),
+              ),
+              icon: Icons.contact_mail,
+              onSaved: (value) {},
+            ),
+            SizedBox(height: size.height * 0.02),
+            DropdownButtonWidget(),
+          ],
         ),
-        RoundedInputField(
-          label: getTranslated(context, 'last_name'),
-          hintText: "Ivić",
-          onSaved: (value) {},
-        ),
-        RoundedInputField(
-          label: getTranslated(context, 'email'),
-          email: true,
-          hintText: "ivana.ivic@gmail.com",
-          onSaved: (value) {},
-        ),
-        RoundedInputField(
-          label: getTranslated(context, 'oib'),
-          email: true,
-          hintText: "08125622264",
-          onSaved: (value) {},
-        ),
-        RoundedInputField(
-          label: getTranslated(context, 'phone_number'),
-          email: true,
-          hintText: "098562332",
-          onSaved: (value) {},
-        ),
-        RoundedInputField(
-          label: getTranslated(context, 'address'),
-          email: true,
-          hintText: "Jeretova 18",
-          onSaved: (value) {},
-        ),
-        RoundedInputField(
-          label: getTranslated(context, 'city'),
-          email: true,
-          hintText: "Pula",
-          onSaved: (value) {},
-        ),
-        RoundedInputField(
-          label: getTranslated(context, 'postal_code'),
-          email: true,
-          hintText: "52100",
-          onSaved: (value) {},
-        ),
-        DropdownButtonWidget(),
-        SizedBox(height: size.height * 0.02),
-      ],
+      ),
     );
   }
 }
