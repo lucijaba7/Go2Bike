@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go2bike/widgets/rounded_button.dart';
 import 'package:go2bike/widgets/rounded_input_field.dart';
 import 'package:go2bike/widgets/rounded_password_field.dart';
+import 'package:go2bike/widgets/loader.dart';
 import 'package:go2bike/localization/app_localization.dart';
 import 'package:go2bike/providers/auth.dart';
 import 'package:go2bike/providers/public_operators.dart';
@@ -27,16 +28,13 @@ class _SignupFormState extends State<SignupForm> {
   var _isInit = true;
 
   var _isLoading = false;
-  final _passwordController = TextEditingController(); //??
 
   void didChangeDependencies() {
     if (_isInit) {
       setState(() {
         _isLoading = true;
       });
-      Provider.of<PublicOperators>(context, listen: false)
-          .fetchOperators()
-          .then((_) {
+      Provider.of<PublicOperators>(context).fetchOperators().then((_) {
         setState(() {
           _isLoading = false;
         });
@@ -48,17 +46,19 @@ class _SignupFormState extends State<SignupForm> {
 
   Future<void> _submit() async {
     if (!_signupKey.currentState.validate()) {
-      //Invalid!
       return;
     }
     _signupKey.currentState.save();
     setState(() {
       _isLoading = true;
     });
-    // await Provider.of<Auth>(context, listen: false).login(
-    //   _authData['email'],
-    //   _authData['password'],
-    // );
+    await Provider.of<Auth>(context, listen: false).signup(
+      _authData['username'],
+      _authData['email'],
+      _authData['password'],
+      _authData['repeate-password'],
+      _authData['operator-id'],
+    );
     setState(() {
       _isLoading = false;
     });
@@ -74,7 +74,7 @@ class _SignupFormState extends State<SignupForm> {
             label: getTranslated(context, 'username'),
             hintText: getTranslated(context, 'username_description'),
             onSaved: (value) {
-              print(value);
+              _authData['username'] = value;
             },
           ),
           RoundedInputField(
@@ -82,28 +82,30 @@ class _SignupFormState extends State<SignupForm> {
             email: true,
             hintText: getTranslated(context, 'email_description'),
             onSaved: (value) {
-              print(value);
+              _authData['email'] = value;
             },
           ),
           RoundedPasswordField(
             label: getTranslated(context, 'password'),
             hintText: getTranslated(context, 'password_description'),
             onSaved: (value) {
-              print(value);
+              _authData['password'] = value;
             },
           ),
           RoundedPasswordField(
             label: getTranslated(context, 'repeat_password'),
             hintText: getTranslated(context, 'repeat_password_description'),
             onSaved: (value) {
-              print(value);
+              _authData['repeate-password'] = value;
             },
           ),
-          DropdownButtonWidget(
-            onSaved: (value) {
-              print(value);
-            },
-          ),
+          _isLoading
+              ? Loader()
+              : DropdownButtonWidget(
+                  onSaved: (value) {
+                    _authData['operator-id'] = value.operatorId;
+                  },
+                ),
           RoundedButton(
             text: getTranslated(context, 'register'),
             val: 0.8,

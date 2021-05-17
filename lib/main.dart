@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:go2bike/providers/public_operators.dart';
+import 'package:go2bike/screens/splashscreen.dart';
 import 'package:provider/provider.dart';
 
 import 'constraints.dart';
 import 'localization/app_localization.dart';
 
 import 'providers/auth.dart';
+import 'providers/user_profile.dart';
+import 'providers/public_operators.dart';
+
 import 'screens/welcome/welcome_screen.dart';
 import 'screens/login/login_screen.dart';
 import 'screens/signup/signup_screen.dart';
@@ -15,7 +18,6 @@ import 'screens/account/account_screen.dart';
 import 'screens/account/bike_rents_screen.dart';
 import 'screens/account/change_password_screen.dart';
 import 'screens/account/personal_data_screen.dart';
-import 'screens/tariffs/tariffs_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -31,7 +33,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Locale _locale;
-  bool _isAuth = false;
 
   void setLocale(Locale locale) {
     setState(() {
@@ -48,7 +49,12 @@ class _MyAppState extends State<MyApp> {
         ),
         ChangeNotifierProvider(
           create: (ctx) => PublicOperators(),
-        )
+        ),
+        ChangeNotifierProxyProvider<Auth, UserProfile>(
+          create: (ctx) => UserProfile(null, null, null),
+          update: (ctx, auth, previusUser) => UserProfile(auth.username,
+              auth.token, previusUser == null ? null : previusUser.user),
+        ),
       ],
       child: Consumer<Auth>(
         builder: (ctx, auth, _) {
@@ -86,12 +92,19 @@ class _MyAppState extends State<MyApp> {
               }
               return supportedLocales.first;
             },
-            home: auth.isAuth ? MainPage() : WelcomeScreen(),
+            home: auth.isAuth
+                ? MainPage()
+                : FutureBuilder(
+                    future: auth.tryAutoLogin(),
+                    builder: (ctx, authResultSnapshot) =>
+                        authResultSnapshot.connectionState ==
+                                ConnectionState.waiting
+                            ? SplashScreen()
+                            : WelcomeScreen(),
+                  ),
             routes: {
-              WelcomeScreen.routeName: (ctx) => WelcomeScreen(),
               LoginScreen.routeName: (ctx) => LoginScreen(),
               SignUpScreen.routeName: (ctx) => SignUpScreen(),
-              MainPage.routeName: (ctx) => MainPage(),
               Account.routeName: (ctx) => Account(),
               BikeRents.routeName: (ctx) => BikeRents(),
               ChangePassword.routeName: (ctx) => ChangePassword(),

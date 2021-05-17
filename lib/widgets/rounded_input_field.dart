@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/widgets/text_field_container.dart';
 import 'package:go2bike/constraints.dart';
 import 'package:go2bike/localization/app_localization.dart';
 
@@ -22,7 +21,7 @@ class RoundedInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    //Size size = MediaQuery.of(context).size;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[

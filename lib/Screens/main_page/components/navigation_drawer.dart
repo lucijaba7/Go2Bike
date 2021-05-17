@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go2bike/localization/app_localization.dart';
 import 'package:go2bike/screens/account/account_screen.dart';
 import 'package:go2bike/screens/tariffs/tariffs_screen.dart';
+import 'package:provider/provider.dart';
+import '../../../providers/user_profile.dart';
+import '../../../providers/auth.dart';
 import '../../../constraints.dart';
 import '../../../custom_icons_icons.dart';
 
@@ -15,22 +18,21 @@ class NavigationDrawer extends StatelessWidget {
       child: ListView(children: [
         Column(
           children: [
-            Row(
-              children: [
-                Padding(
-                    padding: const EdgeInsets.only(left: 25.0, top: 30.0),
-                    child: Text(
-                      "IVANA IVIĆ",
-                      style: TextStyle(
-                        fontFamily: "JosefinSansBold",
-                        fontSize: 34,
-                        color: kPrimaryDarkColor,
-                      ),
-                    ))
-              ],
+            Consumer<UserProfile>(
+              builder: (ctx, userData, _) => Padding(
+                padding: const EdgeInsets.only(left: 0.0, top: 0.0),
+                child: Text(
+                  'IVANA',
+                  style: TextStyle(
+                    fontFamily: "JosefinSansBold",
+                    fontSize: 34,
+                    color: kPrimaryDarkColor,
+                  ),
+                ),
+              ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 12.0),
+              margin: const EdgeInsets.only(top: 12.0),
               width: size.width,
               height: size.height * 0.09,
               decoration: BoxDecoration(color: kPrimaryLightColor),
@@ -88,8 +90,14 @@ class NavigationDrawer extends StatelessWidget {
             text: getTranslated(context, 'promotions').toUpperCase(),
             icon: CustomIcons.giftbox),
         buildMenuItem(
-            text: getTranslated(context, 'logout').toUpperCase(),
-            icon: CustomIcons.logout)
+          text: getTranslated(context, 'logout').toUpperCase(),
+          icon: CustomIcons.logout,
+          onClicked: () {
+            Navigator.of(context).pop();
+            // Nagivator.of(context).pushReplacementNamed('/');
+            Provider.of<Auth>(context, listen: false).logout();
+          },
+        ),
       ]),
     ));
   }

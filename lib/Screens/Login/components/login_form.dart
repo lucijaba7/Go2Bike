@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go2bike/screens/main_page/main_page.dart';
 import 'package:go2bike/widgets/rounded_button.dart';
 import 'package:go2bike/widgets/rounded_input_field.dart';
 import 'package:go2bike/widgets/rounded_password_field.dart';
+import 'package:go2bike/widgets/loader.dart';
 import 'package:go2bike/localization/app_localization.dart';
-import 'package:go2bike/models/http_exception.dart';
 import 'package:go2bike/providers/auth.dart';
-import 'package:go2bike/screens/main_page/main_page.dart';
 import '../../../constraints.dart';
 import 'package:provider/provider.dart';
 
@@ -23,7 +23,7 @@ class _LoginFormState extends State<LoginForm> {
   };
 
   var _isLoading = false;
-  final _passwordController = TextEditingController(); //??
+  //final _passwordController = TextEditingController();
 
   void _showErrorDialog(String message) {
     showDialog(
@@ -60,13 +60,7 @@ class _LoginFormState extends State<LoginForm> {
         _authData['email'],
         _authData['password'],
       );
-      Navigator.of(context).pop();
-    } on HttpException catch (error) {
-      var errorMessage = 'Authentication failed';
-      print(error);
-      errorMessage = "jos nez";
-      //if error.toString().contains..., errorMessage = 'nesto'
-      _showErrorDialog(errorMessage);
+      Navigator.of(context).pushReplacementNamed(MainPage.routeName);
     } catch (error) {
       final errorMessage = getTranslated(context, "error_message_default");
       _showErrorDialog(errorMessage);
@@ -111,18 +105,13 @@ class _LoginFormState extends State<LoginForm> {
             ),
           ),
           SizedBox(height: size.height * 0.02),
-          if (_isLoading)
-            CircularProgressIndicator()
-          else
-            RoundedButton(
-              text: getTranslated(context, 'signin'),
-              val: 0.8,
-              press: _submit,
-              // press: () {
-              //   // can't import routeName
-              //   //Navigator.of(context).pushNamed('/main-page');
-              // },
-            ),
+          _isLoading
+              ? Loader()
+              : RoundedButton(
+                  text: getTranslated(context, 'signin'),
+                  val: 0.8,
+                  press: _submit,
+                ),
         ],
       ),
     );

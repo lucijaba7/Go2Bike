@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go2bike/widgets/text_field_container.dart';
 import 'package:go2bike/constraints.dart';
 import 'package:go2bike/localization/app_localization.dart';
 
-class RoundedPasswordField extends StatelessWidget {
+class RoundedPasswordField extends StatefulWidget {
   final String label;
   final String hintText;
 
@@ -18,6 +17,19 @@ class RoundedPasswordField extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  _RoundedPasswordFieldState createState() => _RoundedPasswordFieldState();
+}
+
+class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
+  bool _obscureText = true;
+
+  void _toggle() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,23 +37,26 @@ class RoundedPasswordField extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 20.0, bottom: 10.0),
           child: Text(
-            label,
+            widget.label,
             style: TextStyle(
               fontWeight: FontWeight.w700,
             ),
           ),
         ),
         TextFormField(
-          obscureText: true,
+          obscureText: _obscureText,
           decoration: InputDecoration(
-            hintText: hintText,
+            hintText: widget.hintText,
             prefixIcon: Icon(
               Icons.lock,
               color: kPrimaryDarkColor,
             ),
-            suffixIcon: Icon(
-              Icons.visibility,
-              color: kPrimaryDarkColor,
+            suffixIcon: IconButton(
+              onPressed: _toggle,
+              icon: Icon(
+                Icons.visibility,
+                color: kPrimaryDarkColor,
+              ),
             ),
             contentPadding: EdgeInsets.all(15.0),
             fillColor: Colors.white,
@@ -66,8 +81,9 @@ class RoundedPasswordField extends StatelessWidget {
             if (value.isEmpty || value.length < 5) {
               return getTranslated(context, 'invalid-password');
             }
+            return null;
           },
-          onSaved: onSaved,
+          onSaved: widget.onSaved,
         ),
       ],
     );

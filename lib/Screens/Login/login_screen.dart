@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:go2bike/widgets/language_footer.dart';
-import 'package:go2bike/widgets/rounded_button.dart';
-import 'package:go2bike/widgets/rounded_input_field.dart';
-import 'package:go2bike/widgets/rounded_password_field.dart';
 import 'package:go2bike/localization/app_localization.dart';
 import 'package:go2bike/widgets/already_have_an_account_check.dart';
+import 'package:go2bike/screens/signup/signup_screen.dart';
 
 import 'components/social_media.dart';
 import 'components/login_form.dart';
-
-import '../signup/signup_screen.dart';
-import '../main_page/main_page.dart';
 
 class LoginScreen extends StatelessWidget {
   static const routeName = '/login';
@@ -51,8 +46,8 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: size.height * 0.03),
               AlreadyHaveAnAccountCheck(
                 press: () {
-                  // can't import routeName
-                  Navigator.of(context).pushNamed('/sign-up');
+                  Navigator.of(context)
+                      .pushReplacementNamed(SignUpScreen.routeName);
                 },
               ),
               SizedBox(height: size.height * 0.02),
