@@ -13,5 +13,4 @@ Check out the **[Design Prototype](https://www.figma.com/proto/TnJJuL8PCp3xpSreg
 
 ## Tech Stack  
 - **Frontend:** Flutter, Dart  
-- **Backend:** Firebase 
 - **Design:** Figma  
