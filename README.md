@@ -1,16 +1,17 @@
-# go2bike
+# Bike-Sharing App 🚲  
 
-A new Flutter project.
+A mobile application for bike-sharing, developed using **Flutter** and **Dart**.  
 
-## Getting Started
+## Features  
+- 🚴‍♂️ User-friendly interface for renting and returning bikes  
+- 📍 GPS-based bike station locations  
+- 🔒 Secure authentication and payment integration  
+- 📊 Usage tracking and analytics  
 
-This project is a starting point for a Flutter application.
+## Prototype  
+Check out the **[Design Prototype](https://www.figma.com/proto/TnJJuL8PCp3xpSregLjv2g/Prototip?node-id=128-6&t=u95MapK9XN60igDb-1)** on Figma to see the app's UI/UX concept.  
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Tech Stack  
+- **Frontend:** Flutter, Dart  
+- **Backend:** Firebase 
+- **Design:** Figma  
